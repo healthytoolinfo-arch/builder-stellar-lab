@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import emailjs from '@emailjs/browser';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Index() {
   const [formData, setFormData] = useState({
@@ -9,6 +9,7 @@ export default function Index() {
     message: ""
   });
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -67,6 +68,35 @@ export default function Index() {
     setMobileMenuOpen(false);
   };
 
+  // Scroll spy to track active section
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['projects', 'about', 'contact'];
+      const scrollPosition = window.scrollY + 100;
+
+      for (const sectionId of sections) {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          const { offsetTop, offsetHeight } = section;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(sectionId);
+            return;
+          }
+        }
+      }
+
+      // If we're at the top, no section is active
+      if (window.scrollY < 300) {
+        setActiveSection('');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial position
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#FFFFFC]">
       {/* Header */}
@@ -111,19 +141,25 @@ export default function Index() {
           <nav className="hidden lg:flex items-center space-x-16">
             <button
               onClick={() => scrollToSection('projects')}
-              className="font-gill-sans text-xl text-black hover:opacity-70 transition-opacity"
+              className={`font-gill-sans text-xl text-black hover:opacity-70 transition-all duration-300 relative ${
+                activeSection === 'projects' ? 'after:content-[""] after:absolute after:bottom-[-8px] after:left-0 after:right-0 after:h-0.5 after:bg-black' : ''
+              }`}
             >
               Projects
             </button>
             <button
               onClick={() => scrollToSection('about')}
-              className="font-gill-sans text-xl text-black hover:opacity-70 transition-opacity"
+              className={`font-gill-sans text-xl text-black hover:opacity-70 transition-all duration-300 relative ${
+                activeSection === 'about' ? 'after:content-[""] after:absolute after:bottom-[-8px] after:left-0 after:right-0 after:h-0.5 after:bg-black' : ''
+              }`}
             >
               About us
             </button>
             <button
               onClick={() => scrollToSection('contact')}
-              className="font-gill-sans text-xl text-black hover:opacity-70 transition-opacity"
+              className={`font-gill-sans text-xl text-black hover:opacity-70 transition-all duration-300 relative ${
+                activeSection === 'contact' ? 'after:content-[""] after:absolute after:bottom-[-8px] after:left-0 after:right-0 after:h-0.5 after:bg-black' : ''
+              }`}
             >
               Contact
             </button>
@@ -134,43 +170,83 @@ export default function Index() {
             className="lg:hidden p-2 relative w-8 h-8 flex items-center justify-center"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            {!mobileMenuOpen ? (
-              <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 2V0H24V2H0ZM0 18V16H24V18H0ZM0 10V8H24V10H0Z" fill="#1C1B1F"/>
-              </svg>
-            ) : (
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2 2L22 22M22 2L2 22" stroke="#1C1B1F" strokeWidth="2" strokeLinecap="round"/>
-              </svg>
-            )}
+            <div className="relative w-6 h-6">
+              <motion.span
+                className="absolute left-0 w-6 h-0.5 bg-black origin-center"
+                style={{ top: mobileMenuOpen ? '50%' : '25%' }}
+                animate={{
+                  rotate: mobileMenuOpen ? 45 : 0,
+                  y: mobileMenuOpen ? 0 : 0,
+                  top: mobileMenuOpen ? '50%' : '25%'
+                }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+              />
+              <motion.span
+                className="absolute left-0 top-1/2 w-6 h-0.5 bg-black"
+                animate={{
+                  opacity: mobileMenuOpen ? 0 : 1
+                }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+              />
+              <motion.span
+                className="absolute left-0 w-6 h-0.5 bg-black origin-center"
+                style={{ bottom: mobileMenuOpen ? '50%' : '25%' }}
+                animate={{
+                  rotate: mobileMenuOpen ? -45 : 0,
+                  y: mobileMenuOpen ? 0 : 0,
+                  bottom: mobileMenuOpen ? '50%' : '25%'
+                }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+              />
+            </div>
           </button>
         </div>
 
         {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden bg-[#FFFFFC] border-t border-gray-200 py-8 mt-4">
-            <div className="max-w-7xl mx-auto px-6 flex flex-col space-y-6">
-              <button
-                onClick={() => scrollToSection('projects')}
-                className="font-gill-sans text-xl text-black hover:opacity-70 transition-opacity text-left"
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              className="lg:hidden bg-[#FFFFFC] border-t border-gray-200 py-8 mt-4 overflow-hidden"
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: 'auto', opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+            >
+              <motion.div
+                className="max-w-7xl mx-auto px-6 flex flex-col space-y-6"
+                initial={{ y: -20 }}
+                animate={{ y: 0 }}
+                exit={{ y: -20 }}
+                transition={{ duration: 0.3, delay: 0.1 }}
               >
-                Projects
-              </button>
-              <button
-                onClick={() => scrollToSection('about')}
-                className="font-gill-sans text-xl text-black hover:opacity-70 transition-opacity text-left"
-              >
-                About us
-              </button>
-              <button
-                onClick={() => scrollToSection('contact')}
-                className="font-gill-sans text-xl text-black hover:opacity-70 transition-opacity text-left"
-              >
-                Contact
-              </button>
-            </div>
-          </div>
-        )}
+                <button
+                  onClick={() => scrollToSection('projects')}
+                  className={`font-gill-sans text-xl text-black hover:opacity-70 transition-all duration-300 text-left relative ${
+                    activeSection === 'projects' ? 'after:content-[""] after:absolute after:bottom-[-4px] after:left-0 after:w-8 after:h-0.5 after:bg-black' : ''
+                  }`}
+                >
+                  Projects
+                </button>
+                <button
+                  onClick={() => scrollToSection('about')}
+                  className={`font-gill-sans text-xl text-black hover:opacity-70 transition-all duration-300 text-left relative ${
+                    activeSection === 'about' ? 'after:content-[""] after:absolute after:bottom-[-4px] after:left-0 after:w-8 after:h-0.5 after:bg-black' : ''
+                  }`}
+                >
+                  About us
+                </button>
+                <button
+                  onClick={() => scrollToSection('contact')}
+                  className={`font-gill-sans text-xl text-black hover:opacity-70 transition-all duration-300 text-left relative ${
+                    activeSection === 'contact' ? 'after:content-[""] after:absolute after:bottom-[-4px] after:left-0 after:w-8 after:h-0.5 after:bg-black' : ''
+                  }`}
+                >
+                  Contact
+                </button>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </header>
 
       {/* Hero Section */}
@@ -182,7 +258,7 @@ export default function Index() {
             </h1>
             <button
               onClick={() => scrollToSection('contact')}
-              className="w-full lg:w-auto px-4 py-2 bg-black text-white font-inter font-bold text-base rounded-lg hover:bg-gray-800 transition-colors"
+              className="w-full lg:w-auto px-4 py-2 bg-black text-white font-inter font-bold text-base rounded-lg hover:bg-gray-700 hover:scale-105 transition-all duration-300 transform"
             >
               Contact us
             </button>
@@ -385,7 +461,7 @@ export default function Index() {
                 
                 <button
                   type="submit"
-                  className="w-full lg:w-auto px-4 py-3 bg-black text-white font-inter font-bold text-base rounded-lg hover:bg-gray-800 transition-colors"
+                  className="w-full lg:w-auto px-4 py-3 bg-black text-white font-inter font-bold text-base rounded-lg hover:bg-gray-700 hover:scale-105 transition-all duration-300 transform"
                 >
                   Contact us
                 </button>
