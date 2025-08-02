@@ -190,7 +190,7 @@ export default function Index() {
             <img
               src="https://api.builder.io/api/v1/image/assets/TEMP/aeb6591aa0992e0f1a119dda4e425d95261e1f24?width=1106"
               alt="Team illustration"
-              className="w-full max-w-sm md:max-w-md lg:max-w-lg h-auto mx-auto"
+              className="w-full max-w-sm md:max-w-md lg:max-w-lg h-auto mx-auto block"
             />
           </div>
         </div>
@@ -204,11 +204,11 @@ export default function Index() {
           </h2>
           
           <div className="w-full flex flex-col lg:flex-row items-start gap-6 lg:gap-32">
-            <div className="lg:w-1/2 flex justify-center">
+            <div className="lg:w-1/2 flex justify-center items-center">
               <img
                 src="https://api.builder.io/api/v1/image/assets/TEMP/2785a569c041b1950ce1cc503e61182ca53bd9a5?width=718"
                 alt="Project illustration"
-                className="w-full max-w-sm md:max-w-md h-auto mx-auto"
+                className="w-full max-w-xs md:max-w-sm lg:max-w-md h-auto mx-auto block"
               />
             </div>
             <div className="lg:w-1/2">
@@ -228,7 +228,7 @@ export default function Index() {
             <img
               src="https://api.builder.io/api/v1/image/assets/TEMP/a937afc03306a051c8043cbd0977df0234d4f0ea?width=1104"
               alt="Additional project illustration"
-              className="w-full max-w-md md:max-w-lg h-auto mx-auto"
+              className="w-full max-w-sm md:max-w-md lg:max-w-lg h-auto mx-auto block"
             />
           </div>
         </div>
@@ -242,11 +242,11 @@ export default function Index() {
           </h2>
           
           <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-32">
-            <div className="lg:w-1/2 flex justify-center">
+            <div className="lg:w-1/2 flex justify-center items-center">
               <img
                 src="https://api.builder.io/api/v1/image/assets/TEMP/e18d29b28501d84e34086be05d5ef2a5654c8e6d?width=722"
                 alt="About us illustration"
-                className="w-full max-w-sm md:max-w-md h-auto mx-auto"
+                className="w-full max-w-xs md:max-w-sm lg:max-w-md h-auto mx-auto block"
               />
             </div>
             <div className="lg:w-1/2">
@@ -345,11 +345,11 @@ export default function Index() {
               </form>
             </div>
             
-            <div className="lg:w-1/2 flex justify-center">
+            <div className="lg:w-1/2 flex justify-center items-center">
               <img
                 src="https://api.builder.io/api/v1/image/assets/TEMP/0dd979f6d97ac4aa15d61a99a715b109041f1b8e?width=912"
                 alt="Contact illustration"
-                className="w-full max-w-sm md:max-w-md h-auto mx-auto"
+                className="w-full max-w-xs md:max-w-sm lg:max-w-md h-auto mx-auto block"
               />
             </div>
           </div>
