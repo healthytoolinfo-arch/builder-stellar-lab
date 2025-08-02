@@ -170,35 +170,50 @@ export default function Index() {
             className="lg:hidden p-2 relative w-8 h-8 flex items-center justify-center"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            <div className="relative w-6 h-5">
+            <div className="relative w-6 h-6 flex flex-col justify-center">
               <motion.span
-                className="absolute left-0 w-6 h-0.5 bg-black transform-gpu"
+                className="absolute w-6 h-0.5 bg-black transform-gpu"
                 initial={false}
                 animate={{
                   rotate: mobileMenuOpen ? 45 : 0,
-                  y: mobileMenuOpen ? 10 : 0,
+                  y: mobileMenuOpen ? 0 : -8,
                 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
-                style={{ transformOrigin: 'center' }}
+                style={{
+                  transformOrigin: 'center center',
+                  top: '50%',
+                  left: '0',
+                  transform: mobileMenuOpen ? 'translateY(-50%) rotate(45deg)' : 'translateY(-50%) translateY(-8px)'
+                }}
               />
               <motion.span
-                className="absolute left-0 top-2.5 w-6 h-0.5 bg-black transform-gpu"
+                className="absolute w-6 h-0.5 bg-black transform-gpu"
                 initial={false}
                 animate={{
                   opacity: mobileMenuOpen ? 0 : 1,
-                  x: mobileMenuOpen ? 20 : 0
+                  scale: mobileMenuOpen ? 0.8 : 1
                 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
+                transition={{ duration: 0.2, ease: "easeInOut" }}
+                style={{
+                  top: '50%',
+                  left: '0',
+                  transform: 'translateY(-50%)'
+                }}
               />
               <motion.span
-                className="absolute left-0 bottom-0 w-6 h-0.5 bg-black transform-gpu"
+                className="absolute w-6 h-0.5 bg-black transform-gpu"
                 initial={false}
                 animate={{
                   rotate: mobileMenuOpen ? -45 : 0,
-                  y: mobileMenuOpen ? -10 : 0,
+                  y: mobileMenuOpen ? 0 : 8,
                 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
-                style={{ transformOrigin: 'center' }}
+                style={{
+                  transformOrigin: 'center center',
+                  top: '50%',
+                  left: '0',
+                  transform: mobileMenuOpen ? 'translateY(-50%) rotate(-45deg)' : 'translateY(-50%) translateY(8px)'
+                }}
               />
             </div>
           </button>
