@@ -1,24 +1,92 @@
-import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const NotFound = () => {
-  const location = useLocation();
-
-  useEffect(() => {
-    console.error(
-      "404 Error: User attempted to access non-existent route:",
-      location.pathname,
-    );
-  }, [location.pathname]);
-
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">404</h1>
-        <p className="text-xl text-gray-600 mb-4">Oops! Page not found</p>
-        <a href="/" className="text-blue-500 hover:text-blue-700 underline">
-          Return to Home
-        </a>
+    <div className="min-h-screen bg-[#FFFFFC] flex flex-col items-center justify-center px-4">
+      <div className="text-center max-w-4xl mx-auto">
+        {/* 404 Header */}
+        <motion.div 
+          className="mb-8"
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <h1 className="font-gill-sans font-bold text-6xl md:text-8xl lg:text-9xl text-black mb-2">
+            404?
+          </h1>
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <span className="text-2xl md:text-3xl">✕</span>
+            <h2 className="font-gill-sans font-bold text-2xl md:text-4xl text-black">
+              NOT FOUND
+            </h2>
+            <span className="text-2xl md:text-3xl">✕</span>
+          </div>
+        </motion.div>
+
+        {/* Illustration */}
+        <motion.div 
+          className="mb-8"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+        >
+          <img 
+            src="https://api.builder.io/api/v1/image/assets/TEMP/9de058c79701c509287f0cc92ea3e2ec376cdff9?width=1104" 
+            alt="404 illustration with confused characters"
+            className="w-full max-w-sm md:max-w-md lg:max-w-lg h-auto mx-auto"
+          />
+        </motion.div>
+
+        {/* Message */}
+        <motion.p 
+          className="font-gill-sans text-2xl md:text-3xl lg:text-4xl text-black leading-tight mb-12 max-w-3xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+        >
+          "Oops! You've hit a dead end… but hey, even legends get lost sometimes!"
+        </motion.p>
+
+        {/* Back to Home Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
+        >
+          <Link 
+            to="/"
+            className="inline-flex items-center justify-center px-8 py-4 bg-black text-white font-gill-sans font-semibold text-lg rounded-lg hover:bg-gray-700 hover:scale-105 transition-all duration-300 transform"
+          >
+            Back to Home
+          </Link>
+        </motion.div>
+
+        {/* Decorative elements */}
+        <motion.div 
+          className="absolute top-1/4 left-1/4 text-3xl opacity-20"
+          initial={{ opacity: 0, rotate: -45 }}
+          animate={{ opacity: 0.2, rotate: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
+        >
+          ⚡
+        </motion.div>
+        <motion.div 
+          className="absolute top-1/3 right-1/4 text-2xl opacity-20"
+          initial={{ opacity: 0, rotate: 45 }}
+          animate={{ opacity: 0.2, rotate: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 1 }}
+        >
+          ✨
+        </motion.div>
+        <motion.div 
+          className="absolute bottom-1/4 left-1/3 text-xl opacity-20"
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 0.2, scale: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 1.2 }}
+        >
+          ❤️
+        </motion.div>
       </div>
     </div>
   );
