@@ -301,6 +301,7 @@ export default function Index() {
                     value={formData.name}
                     onChange={handleInputChange}
                     placeholder="Rachel Joe"
+                    required
                     className="w-full px-6 py-4 border border-black rounded-lg bg-white font-inter text-base text-gray-500 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-black"
                   />
                 </div>
