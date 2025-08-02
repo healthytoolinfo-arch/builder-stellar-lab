@@ -6,11 +6,15 @@ export default function Index() {
     email: "",
     message: ""
   });
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
     console.log('Form submitted:', formData);
+    // Reset form after submission
+    setFormData({ name: "", email: "", message: "" });
+    alert('Thank you for your message! We\'ll get back to you soon.');
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -18,6 +22,14 @@ export default function Index() {
       ...formData,
       [e.target.name]: e.target.value
     });
+  };
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setMobileMenuOpen(false);
   };
 
   return (
