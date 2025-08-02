@@ -589,7 +589,7 @@ export default function Index() {
       </section>
 
       {/* Footer */}
-      <footer className="w-full bg-black text-white py-16 px-4 lg:px-16 xl:px-0">
+      <footer className="w-full bg-black text-white py-16 px-4 lg:px-16 xl:px-0 pb-24 lg:pb-16">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8">
             {/* Logo and Company Info */}
