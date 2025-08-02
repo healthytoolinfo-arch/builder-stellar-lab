@@ -331,6 +331,7 @@ export default function Index() {
                     onChange={handleInputChange}
                     placeholder="Type your query here....."
                     rows={4}
+                    required
                     className="w-full px-6 py-4 border border-black rounded-lg bg-white font-inter text-base text-gray-500 placeholder-gray-400 resize-none focus:outline-none focus:ring-2 focus:ring-black"
                   />
                 </div>
