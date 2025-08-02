@@ -69,7 +69,7 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-[#FFFFFC]">
       {/* Header */}
-      <header className="w-full bg-[#FFFFFC] py-4 lg:py-6 px-4 lg:px-0 sticky top-0 z-50 border-b border-transparent transition-all duration-300">
+      <header className="w-full bg-[#FFFFFC] py-4 lg:py-6 px-4 lg:px-16 xl:px-0 sticky top-0 z-50 border-b border-transparent transition-all duration-300">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           {/* Logo */}
           <button
