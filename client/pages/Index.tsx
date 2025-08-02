@@ -1,62 +1,261 @@
-import { DemoResponse } from "@shared/api";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function Index() {
-  const [exampleFromServer, setExampleFromServer] = useState("");
-  // Fetch users on component mount
-  useEffect(() => {
-    fetchDemo();
-  }, []);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
 
-  // Example of how to fetch data from the server (if needed)
-  const fetchDemo = async () => {
-    try {
-      const response = await fetch("/api/demo");
-      const data = (await response.json()) as DemoResponse;
-      setExampleFromServer(data.message);
-    } catch (error) {
-      console.error("Error fetching hello:", error);
-    }
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle form submission
+    console.log('Form submitted:', formData);
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200">
-      <div className="text-center">
-        {/* TODO: FUSION_GENERATION_APP_PLACEHOLDER replace everything here with the actual app! */}
-        <h1 className="text-2xl font-semibold text-slate-800 flex items-center justify-center gap-3">
-          <svg
-            className="animate-spin h-8 w-8 text-slate-400"
-            viewBox="0 0 50 50"
-          >
-            <circle
-              className="opacity-30"
-              cx="25"
-              cy="25"
-              r="20"
-              stroke="currentColor"
-              strokeWidth="5"
+    <div className="min-h-screen bg-[#FFFFFC]">
+      {/* Header */}
+      <header className="w-full bg-[#FFFFFC] py-16 px-4 lg:px-0">
+        <div className="max-w-7xl mx-auto flex justify-between items-center">
+          {/* Logo */}
+          <div className="flex items-center">
+            <svg
+              width="168"
+              height="135"
+              viewBox="0 0 168 135"
               fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-32 h-auto lg:w-42"
+            >
+              <g clipPath="url(#clip0_1_5)">
+                <path d="M9.28546 3.26505C11.8223 3.26505 14.0036 4.17797 15.8294 5.99308C17.6553 7.81356 18.5655 9.98846 18.5655 12.5178C18.5655 15.0471 17.6661 17.1254 15.8618 19.0103C14.0575 20.9006 11.8653 21.8404 9.28007 21.8404C6.69479 21.8404 4.6158 20.8952 2.7684 19.0103C0.921005 17.1308 0 14.9612 0 12.5232C0 9.95087 0.937163 7.75985 2.8061 5.96086C4.67504 4.16186 6.83483 3.26505 9.28546 3.26505ZM17.4991 32.0383V94.246H1.06643V32.0383H17.4991Z" fill="#1D1D1B"/>
+                <path d="M42.684 0C46.2442 0 49.0987 1.32105 51.2316 3.96316C53.3698 6.60527 54.4363 10.1012 54.4363 14.4511C54.4363 20.3099 52.465 25.5189 48.5224 30.0674C44.5799 34.6213 39.7594 37.3171 34.061 38.1602V34.632C38.3375 31.034 40.4758 26.3513 40.4758 20.5784L40.3411 18.5162C35.3106 17.5818 32.7899 14.5423 32.7899 9.39238C32.7899 6.77175 33.7379 4.55388 35.6284 2.7334C37.5189 0.912924 39.8725 0.00537014 42.6733 0.00537014L42.684 0Z" fill="#1D1D1B"/>
+                <path d="M104.273 30.8354C109.083 30.8354 113.144 31.9577 116.461 34.1971C119.779 36.4418 122.262 39.4491 123.91 43.2189C127.427 38.9121 130.934 35.7705 134.429 33.7943C137.925 31.8181 141.765 30.83 145.95 30.83C152.542 30.83 157.864 32.9727 161.914 37.258C165.964 41.5434 167.995 47.2626 167.995 54.4103V94.2406H151.562V57.1437C151.562 52.8368 150.636 49.4429 148.788 46.9512C146.941 44.4648 144.259 43.2189 140.736 43.2189C135.706 43.2189 130.874 46.441 126.242 52.8744V94.2353H109.874V56.8698C109.874 52.6059 108.894 49.2657 106.934 46.8438C104.973 44.4218 102.345 43.2135 99.0539 43.2135C96.3824 43.2135 93.9318 43.9815 91.7074 45.512C89.4776 47.0424 87.097 49.4966 84.5601 52.869V94.2299H68.1275V32.0383H84.5601V40.7648C87.544 37.3923 90.5709 34.8952 93.6463 33.2734C96.7217 31.6516 100.26 30.8407 104.268 30.8407L104.273 30.8354Z" fill="#1D1D1B"/>
+                <path d="M0 133.12V128.62C1.17953 129.447 2.39138 130.119 3.62478 130.629C4.85817 131.144 5.89767 131.397 6.74327 131.397C7.58887 131.397 8.36984 131.182 9 130.752C9.63016 130.323 9.94255 129.812 9.94255 129.216C9.94255 128.62 9.73788 128.094 9.33393 127.691C8.9246 127.288 8.04668 126.703 6.70018 125.935C4.00179 124.437 2.2298 123.153 1.39497 122.09C0.560144 121.027 0.140036 119.867 0.140036 118.616C0.140036 116.994 0.770197 115.673 2.04129 114.647C3.307 113.621 4.93896 113.111 6.93178 113.111C8.9246 113.111 11.1275 113.691 13.3088 114.857V118.986C10.8205 117.488 8.78995 116.736 7.21185 116.736C6.39856 116.736 5.74147 116.908 5.24596 117.252C4.75045 117.595 4.49731 118.052 4.49731 118.621C4.49731 119.11 4.72352 119.577 5.17594 120.023C5.62837 120.468 6.42011 121 7.55655 121.628L9.05386 122.477C12.5871 124.464 14.3483 126.666 14.3483 129.082C14.3483 130.811 13.6697 132.229 12.3124 133.341C10.9551 134.447 9.21005 135.005 7.0772 135.005C5.81688 135.005 4.69659 134.871 3.71634 134.603C2.73609 134.334 1.49731 133.84 0.010772 133.12H0Z" fill="#1D1D1B"/>
+                <path d="M29.2998 113.476C32.5206 113.476 35.1975 114.513 37.3303 116.586C39.4632 118.659 40.5296 121.263 40.5296 124.399C40.5296 127.536 39.447 129.974 37.2819 131.982C35.1167 133.996 32.3968 135 29.1113 135C25.8258 135 23.2783 133.98 21.1454 131.939C19.0126 129.898 17.9461 127.348 17.9461 124.287C17.9461 121.226 19.0233 118.621 21.1777 116.564C23.3321 114.508 26.0359 113.476 29.289 113.476H29.2998ZM29.0682 117.241C27.0592 117.241 25.4111 117.901 24.1185 119.217C22.8312 120.533 22.1849 122.208 22.1849 124.244C22.1849 126.279 22.842 127.911 24.167 129.19C25.4865 130.468 27.1831 131.107 29.2513 131.107C31.3196 131.107 32.9892 130.462 34.3034 129.168C35.6176 127.874 36.2693 126.22 36.2693 124.201C36.2693 122.181 35.5853 120.538 34.2226 119.223C32.8546 117.907 31.1364 117.246 29.0682 117.246V117.241Z" fill="#1D1D1B"/>
+                <path d="M45.2747 102.575H49.465V134.635H45.2747V102.575Z" fill="#1D1D1B"/>
+                <path d="M69.0054 134.635V131.928C68.1167 132.9 67.0987 133.657 65.9569 134.194C64.8151 134.732 63.6733 135.005 62.5368 135.005C61.2011 135.005 59.9731 134.672 58.842 134.007C57.7163 133.341 56.86 132.438 56.2891 131.3C55.7127 130.162 55.4273 128.266 55.4273 125.618V113.525H59.6176V125.559C59.6176 127.777 59.9354 129.324 60.5709 130.199C61.2065 131.08 62.3214 131.515 63.921 131.515C65.9138 131.515 67.6104 130.543 69.0054 128.599V113.519H73.1957V134.635H69.0054Z" fill="#1D1D1B"/>
+                <path d="M76.1149 116.87L83.9892 109.159V113.519H90.6894V117.284H83.9892V127.616C83.9892 130.027 84.9964 131.236 87.0054 131.236C88.5081 131.236 90.0969 130.736 91.772 129.743V133.641C90.1616 134.544 88.4057 134.995 86.4991 134.995C84.5925 134.995 82.9874 134.436 81.7109 133.319C81.3124 132.981 80.9838 132.605 80.7199 132.181C80.4614 131.762 80.2406 131.209 80.0628 130.527C79.8851 129.845 79.7989 128.55 79.7989 126.639V117.273H76.1149V116.86V116.87Z" fill="#1D1D1B"/>
+                <path d="M96.9479 104.643C97.6373 104.643 98.2298 104.879 98.7199 105.351C99.21 105.824 99.4578 106.409 99.4578 107.097C99.4578 107.784 99.21 108.353 98.7199 108.842C98.2298 109.331 97.6373 109.578 96.9479 109.578C96.3016 109.578 95.7361 109.331 95.246 108.831C94.7558 108.332 94.5081 107.757 94.5081 107.097C94.5081 106.436 94.7504 105.883 95.246 105.389C95.7361 104.89 96.3016 104.643 96.9479 104.643ZM94.8743 113.519H99.0646V134.635H94.8743V113.519Z" fill="#1D1D1B"/>
+                <path d="M115.244 113.476C118.465 113.476 121.142 114.513 123.275 116.586C125.408 118.659 126.474 121.263 126.474 124.399C126.474 127.536 125.391 129.974 123.226 131.982C121.061 133.996 118.341 135 115.056 135C111.77 135 109.223 133.98 107.09 131.939C104.957 129.898 103.89 127.348 103.89 124.287C103.89 121.226 104.968 118.621 107.122 116.564C109.276 114.508 111.98 113.476 115.233 113.476H115.244ZM115.013 117.241C113.004 117.241 111.355 117.901 110.063 119.217C108.776 120.533 108.129 122.208 108.129 124.244C108.129 126.279 108.786 127.911 110.111 129.19C111.431 130.468 113.127 131.107 115.196 131.107C117.264 131.107 118.934 130.462 120.248 129.168C121.562 127.874 122.214 126.22 122.214 124.201C122.214 122.181 121.53 120.538 120.167 119.223C118.799 117.907 117.081 117.246 115.013 117.246V117.241Z" fill="#1D1D1B"/>
+                <path d="M135.318 113.519V116.205C137.192 114.137 139.314 113.106 141.695 113.106C143.014 113.106 144.242 113.444 145.379 114.126C146.515 114.808 147.377 115.743 147.969 116.924C148.562 118.111 148.853 119.985 148.853 122.557V134.629H144.662V122.606C144.662 120.447 144.334 118.906 143.671 117.982C143.009 117.058 141.905 116.591 140.359 116.591C138.377 116.591 136.697 117.579 135.318 119.55V134.629H131.036V113.514H135.318V113.519Z" fill="#1D1D1B"/>
+                <path d="M153.662 133.12V128.62C154.842 129.447 156.054 130.119 157.287 130.629C158.521 131.144 159.56 131.397 160.406 131.397C161.251 131.397 162.032 131.182 162.662 130.752C163.293 130.323 163.605 129.812 163.605 129.216C163.605 128.62 163.4 128.094 162.996 127.691C162.587 127.288 161.709 126.703 160.363 125.935C157.664 124.437 155.892 123.153 155.057 122.09C154.223 121.027 153.803 119.867 153.803 118.616C153.803 116.994 154.433 115.673 155.704 114.647C156.969 113.621 158.601 113.111 160.594 113.111C162.587 113.111 164.79 113.691 166.971 114.857V118.986C164.483 117.488 162.452 116.736 160.874 116.736C160.061 116.736 159.404 116.908 158.908 117.252C158.413 117.595 158.16 118.052 158.16 118.621C158.16 119.11 158.386 119.577 158.838 120.023C159.291 120.468 160.083 121 161.219 121.628L162.716 122.477C166.25 124.464 168.011 126.666 168.011 129.082C168.011 130.811 167.332 132.229 165.975 133.341C164.618 134.447 162.873 135.005 160.74 135.005C159.479 135.005 158.359 134.871 157.379 134.603C156.399 134.334 155.16 133.84 153.673 133.12H153.662Z" fill="#1D1D1B"/>
+              </g>
+              <defs>
+                <clipPath id="clip0_1_5">
+                  <rect width="168" height="135" fill="white"/>
+                </clipPath>
+              </defs>
+            </svg>
+          </div>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center space-x-16">
+            <a href="#projects" className="font-gill-sans text-xl text-black hover:opacity-70 transition-opacity">
+              Projects
+            </a>
+            <a href="#about" className="font-gill-sans text-xl text-black hover:opacity-70 transition-opacity">
+              About us
+            </a>
+            <a href="#contact" className="font-gill-sans text-xl text-black hover:opacity-70 transition-opacity">
+              Contact
+            </a>
+          </nav>
+
+          {/* Mobile Menu Button */}
+          <button className="lg:hidden p-2">
+            <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 2V0H18V2H0ZM0 14V12H18V14H0ZM0 8V6H18V8H0Z" fill="#1C1B1F"/>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section className="w-full px-4 lg:px-0 pb-16 lg:pb-32">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-24">
+          <div className="flex flex-col justify-center items-start gap-6 lg:w-1/2">
+            <h1 className="font-gill-sans font-bold text-3xl lg:text-7xl leading-[120%] tracking-[-0.96px] lg:tracking-[-2.16px] text-black">
+              Because everything starts with believing you are
+            </h1>
+            <button className="w-full lg:w-auto px-4 py-2 bg-black text-white font-inter font-bold text-base rounded-lg hover:bg-gray-800 transition-colors">
+              Contact us
+            </button>
+          </div>
+          <div className="lg:w-1/2 flex justify-center">
+            <img 
+              src="https://api.builder.io/api/v1/image/assets/TEMP/aeb6591aa0992e0f1a119dda4e425d95261e1f24?width=1106" 
+              alt="Team illustration" 
+              className="w-full max-w-md lg:max-w-lg h-auto"
             />
-            <circle
-              className="text-slate-600"
-              cx="25"
-              cy="25"
-              r="20"
-              stroke="currentColor"
-              strokeWidth="5"
-              fill="none"
-              strokeDasharray="100"
-              strokeDashoffset="75"
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="w-full px-4 lg:px-0 py-16 lg:py-32">
+        <div className="max-w-7xl mx-auto flex flex-col items-center gap-8 lg:gap-16">
+          <h2 className="font-gill-sans font-bold text-3xl lg:text-7xl leading-[120%] tracking-[-0.96px] lg:tracking-[-2.16px] text-black">
+            Projects
+          </h2>
+          
+          <div className="w-full flex flex-col lg:flex-row items-start gap-6 lg:gap-24">
+            <div className="lg:w-1/2 flex justify-center">
+              <img 
+                src="https://api.builder.io/api/v1/image/assets/TEMP/2785a569c041b1950ce1cc503e61182ca53bd9a5?width=718" 
+                alt="Project illustration" 
+                className="w-full max-w-md h-auto"
+              />
+            </div>
+            <div className="lg:w-1/2">
+              <h3 className="font-gill-sans font-bold text-xl lg:text-2xl text-black mb-4">
+                Digital platform for nutritionists (under development)
+              </h3>
+              <p className="font-gill-sans text-base leading-[140%] tracking-[-0.48px] text-black">
+                We are developing a tool designed to facilitate the daily life of nutrition professionals. An app focused on the organization, personalization and experience of both the nutritionist and the end customer.
+              </p>
+              <p className="font-gill-sans text-base leading-[140%] tracking-[-0.48px] text-black mt-4">
+                Project in progress. More details coming soon.
+              </p>
+            </div>
+          </div>
+
+          <div className="w-full flex justify-center mt-8 lg:mt-16">
+            <img 
+              src="https://api.builder.io/api/v1/image/assets/TEMP/a937afc03306a051c8043cbd0977df0234d4f0ea?width=1104" 
+              alt="Additional project illustration" 
+              className="w-full max-w-lg h-auto"
             />
-          </svg>
-          Generating your app...
-        </h1>
-        <p className="mt-4 text-slate-600 max-w-md">
-          Watch the chat on the left for updates that might need your attention
-          to finish generating
-        </p>
-        <p className="mt-4 hidden max-w-md">{exampleFromServer}</p>
-      </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="w-full px-4 lg:px-0 py-16 lg:py-32">
+        <div className="max-w-7xl mx-auto flex flex-col items-center gap-8 lg:gap-16">
+          <h2 className="font-gill-sans font-bold text-3xl lg:text-7xl leading-[120%] tracking-[-0.96px] lg:tracking-[-2.16px] text-black">
+            About us
+          </h2>
+          
+          <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-24">
+            <div className="lg:w-1/2 flex justify-center">
+              <img 
+                src="https://api.builder.io/api/v1/image/assets/TEMP/e18d29b28501d84e34086be05d5ef2a5654c8e6d?width=722" 
+                alt="About us illustration" 
+                className="w-full max-w-md h-auto"
+              />
+            </div>
+            <div className="lg:w-1/2">
+              <h3 className="font-gill-sans font-bold text-xl lg:text-2xl text-black mb-6">
+                We are Ivelina and Mario, and this is i'm solutions.
+              </h3>
+              <div className="space-y-4 font-gill-sans text-base leading-[140%] tracking-[-0.48px] text-black">
+                <p>
+                  We met in a startup incubator, working on opposite projects but sharing the same energy: the desire to build something with impact. From the first moment we knew that someday we would work together. That "someday" came sooner than expected.
+                </p>
+                <p>
+                  Ivelina had an idea in her head, born from her experience with nutritionists: why wasn't there a really useful, human and effective tool for the daily work of these professionals? She told Mario about it. He didn't hesitate. That's where it all began. But it was not easy. In fact, it was quite the opposite.
+                </p>
+                <p>
+                  In the first months we faced block after block: ideas that didn't fit, functionalities we didn't know how to solve, uncomfortable silences after sending surveys... Until we made a decision that has marked everything we are as a team: focus on what we can do today, and leave for tomorrow what doesn't depend on us yet. Since then, we moved forward step by step, but without stopping.
+                </p>
+                <p>
+                  This is how our first app was born, designed for nutrition professionals: functional, flexible, forward-looking, and built from empathy with those who are going to use it. And so i'm solutions was also born, not as an agency or a studio, but as a company from which to launch products that are born from real life, from teamwork and from a very specific way of seeing the world: with attitude, resilience and vision.
+                </p>
+                <h4 className="font-gill-sans font-bold text-xl lg:text-2xl text-black mt-8 mb-4">
+                  Why "i'm"?
+                </h4>
+                <p>
+                  Because together we form the core of this project: Ivelina + Mario = i'm. And also because we believe in teams with identity, not only in products with a logo.
+                </p>
+                <p>
+                  This is not just about apps. It's about how to build something worthwhile.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="w-full px-4 lg:px-0 py-16 lg:py-32">
+        <div className="max-w-7xl mx-auto flex flex-col items-center gap-8 lg:gap-16">
+          <h2 className="font-gill-sans font-bold text-3xl lg:text-7xl leading-[120%] tracking-[-0.96px] lg:tracking-[-2.16px] text-black text-center">
+            Contact us
+          </h2>
+          
+          <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-24">
+            <div className="lg:w-1/2 w-full">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label className="block font-inter font-bold text-base text-black mb-2">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    placeholder="Rachel Joe"
+                    className="w-full px-6 py-4 border border-black rounded-lg bg-white font-inter text-base text-gray-500 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-black"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block font-inter font-bold text-base text-black mb-2">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    placeholder="Rachel@domain.com"
+                    className="w-full px-6 py-4 border border-black rounded-lg bg-white font-inter text-base text-gray-500 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-black"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block font-inter font-bold text-base text-black mb-2">
+                    Message
+                  </label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    placeholder="Type your query here....."
+                    rows={4}
+                    className="w-full px-6 py-4 border border-black rounded-lg bg-white font-inter text-base text-gray-500 placeholder-gray-400 resize-none focus:outline-none focus:ring-2 focus:ring-black"
+                  />
+                </div>
+                
+                <button
+                  type="submit"
+                  className="w-full lg:w-auto px-4 py-3 bg-black text-white font-inter font-bold text-base rounded-lg hover:bg-gray-800 transition-colors"
+                >
+                  Contact us
+                </button>
+              </form>
+            </div>
+            
+            <div className="lg:w-1/2 flex justify-center">
+              <img 
+                src="https://api.builder.io/api/v1/image/assets/TEMP/0dd979f6d97ac4aa15d61a99a715b109041f1b8e?width=912" 
+                alt="Contact illustration" 
+                className="w-full max-w-md h-auto"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
