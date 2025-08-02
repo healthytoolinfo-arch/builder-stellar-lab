@@ -714,7 +714,7 @@ export default function Index() {
           </div>
 
           {/* Bottom Section */}
-          <div className="border-t border-gray-700 mt-12 pt-8 flex flex-col lg:flex-row justify-between items-center gap-4">
+          <div className="border-t border-gray-700 mt-12 pt-8 pb-8 lg:pb-0 flex flex-col lg:flex-row justify-between items-center gap-6 lg:gap-4">
             <p className="font-gill-sans text-gray-400 text-sm">
               © {new Date().getFullYear()} i'm solutions. All rights reserved.
             </p>
