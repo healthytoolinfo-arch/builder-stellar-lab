@@ -71,24 +71,62 @@ export default function Index() {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-16">
-            <a href="#projects" className="font-gill-sans text-xl text-black hover:opacity-70 transition-opacity">
+            <button
+              onClick={() => scrollToSection('projects')}
+              className="font-gill-sans text-xl text-black hover:opacity-70 transition-opacity"
+            >
               Projects
-            </a>
-            <a href="#about" className="font-gill-sans text-xl text-black hover:opacity-70 transition-opacity">
+            </button>
+            <button
+              onClick={() => scrollToSection('about')}
+              className="font-gill-sans text-xl text-black hover:opacity-70 transition-opacity"
+            >
               About us
-            </a>
-            <a href="#contact" className="font-gill-sans text-xl text-black hover:opacity-70 transition-opacity">
+            </button>
+            <button
+              onClick={() => scrollToSection('contact')}
+              className="font-gill-sans text-xl text-black hover:opacity-70 transition-opacity"
+            >
               Contact
-            </a>
+            </button>
           </nav>
 
           {/* Mobile Menu Button */}
-          <button className="lg:hidden p-2">
+          <button
+            className="lg:hidden p-2"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
             <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M0 2V0H18V2H0ZM0 14V12H18V14H0ZM0 8V6H18V8H0Z" fill="#1C1B1F"/>
             </svg>
           </button>
         </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="lg:hidden bg-white border-t border-gray-200 py-4">
+            <div className="max-w-7xl mx-auto px-4 flex flex-col space-y-4">
+              <button
+                onClick={() => scrollToSection('projects')}
+                className="font-gill-sans text-xl text-black hover:opacity-70 transition-opacity text-left"
+              >
+                Projects
+              </button>
+              <button
+                onClick={() => scrollToSection('about')}
+                className="font-gill-sans text-xl text-black hover:opacity-70 transition-opacity text-left"
+              >
+                About us
+              </button>
+              <button
+                onClick={() => scrollToSection('contact')}
+                className="font-gill-sans text-xl text-black hover:opacity-70 transition-opacity text-left"
+              >
+                Contact
+              </button>
+            </div>
+          </div>
+        )}
       </header>
 
       {/* Hero Section */}
@@ -98,7 +136,10 @@ export default function Index() {
             <h1 className="font-gill-sans font-bold text-3xl lg:text-7xl leading-[120%] tracking-[-0.96px] lg:tracking-[-2.16px] text-black">
               Because everything starts with believing you are
             </h1>
-            <button className="w-full lg:w-auto px-4 py-2 bg-black text-white font-inter font-bold text-base rounded-lg hover:bg-gray-800 transition-colors">
+            <button
+              onClick={() => scrollToSection('contact')}
+              className="w-full lg:w-auto px-4 py-2 bg-black text-white font-inter font-bold text-base rounded-lg hover:bg-gray-800 transition-colors"
+            >
               Contact us
             </button>
           </div>
