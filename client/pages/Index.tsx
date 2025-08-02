@@ -170,33 +170,35 @@ export default function Index() {
             className="lg:hidden p-2 relative w-8 h-8 flex items-center justify-center"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            <div className="relative w-6 h-6">
+            <div className="relative w-6 h-5">
               <motion.span
-                className="absolute left-0 w-6 h-0.5 bg-black origin-center"
-                style={{ top: mobileMenuOpen ? '50%' : '25%' }}
+                className="absolute left-0 w-6 h-0.5 bg-black transform-gpu"
+                initial={false}
                 animate={{
                   rotate: mobileMenuOpen ? 45 : 0,
-                  y: mobileMenuOpen ? 0 : 0,
-                  top: mobileMenuOpen ? '50%' : '25%'
+                  y: mobileMenuOpen ? 10 : 0,
                 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
+                style={{ transformOrigin: 'center' }}
               />
               <motion.span
-                className="absolute left-0 top-1/2 w-6 h-0.5 bg-black"
+                className="absolute left-0 top-2.5 w-6 h-0.5 bg-black transform-gpu"
+                initial={false}
                 animate={{
-                  opacity: mobileMenuOpen ? 0 : 1
+                  opacity: mobileMenuOpen ? 0 : 1,
+                  x: mobileMenuOpen ? 20 : 0
                 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
               />
               <motion.span
-                className="absolute left-0 w-6 h-0.5 bg-black origin-center"
-                style={{ bottom: mobileMenuOpen ? '50%' : '25%' }}
+                className="absolute left-0 bottom-0 w-6 h-0.5 bg-black transform-gpu"
+                initial={false}
                 animate={{
                   rotate: mobileMenuOpen ? -45 : 0,
-                  y: mobileMenuOpen ? 0 : 0,
-                  bottom: mobileMenuOpen ? '50%' : '25%'
+                  y: mobileMenuOpen ? -10 : 0,
                 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
+                style={{ transformOrigin: 'center' }}
               />
             </div>
           </button>
@@ -258,7 +260,7 @@ export default function Index() {
             </h1>
             <button
               onClick={() => scrollToSection('contact')}
-              className="w-full lg:w-auto px-4 py-2 bg-black text-white font-inter font-bold text-base rounded-lg hover:bg-gray-700 hover:scale-105 transition-all duration-300 transform"
+              className="w-full lg:w-80 px-4 py-2 bg-black text-white font-inter font-bold text-base rounded-lg hover:bg-gray-700 hover:scale-105 transition-all duration-300 transform"
             >
               Contact us
             </button>
