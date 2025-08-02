@@ -32,13 +32,21 @@ export default function Index() {
     setMobileMenuOpen(false);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setMobileMenuOpen(false);
+  };
+
   return (
     <div className="min-h-screen bg-[#FFFFFC]">
       {/* Header */}
-      <header className="w-full bg-[#FFFFFC] py-16 px-4 lg:px-0">
+      <header className="w-full bg-[#FFFFFC] py-4 lg:py-6 px-4 lg:px-0 sticky top-0 z-50 border-b border-transparent transition-all duration-300">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           {/* Logo */}
-          <div className="flex items-center">
+          <button
+            onClick={scrollToTop}
+            className="flex items-center hover:opacity-70 transition-opacity"
+          >
             <svg
               width="168"
               height="135"
@@ -67,7 +75,7 @@ export default function Index() {
                 </clipPath>
               </defs>
             </svg>
-          </div>
+          </button>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-16">
@@ -93,19 +101,25 @@ export default function Index() {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2"
+            className="lg:hidden p-2 relative w-6 h-6 flex items-center justify-center"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0 2V0H18V2H0ZM0 14V12H18V14H0ZM0 8V6H18V8H0Z" fill="#1C1B1F"/>
-            </svg>
+            {!mobileMenuOpen ? (
+              <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 2V0H18V2H0ZM0 14V12H18V14H0ZM0 8V6H18V8H0Z" fill="#1C1B1F"/>
+              </svg>
+            ) : (
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L17 17M17 1L1 17" stroke="#1C1B1F" strokeWidth="2" strokeLinecap="round"/>
+              </svg>
+            )}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-white border-t border-gray-200 py-4">
-            <div className="max-w-7xl mx-auto px-4 flex flex-col space-y-4">
+          <div className="lg:hidden bg-[#FFFFFC] border-t border-gray-200 py-8 mt-4">
+            <div className="max-w-7xl mx-auto px-6 flex flex-col space-y-6">
               <button
                 onClick={() => scrollToSection('projects')}
                 className="font-gill-sans text-xl text-black hover:opacity-70 transition-opacity text-left"
@@ -130,8 +144,8 @@ export default function Index() {
       </header>
 
       {/* Hero Section */}
-      <section className="w-full px-4 lg:px-0 pb-16 lg:pb-32">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-24">
+      <section className="w-full px-4 lg:px-8 xl:px-0 pb-16 lg:pb-32 pt-8 lg:pt-16">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-32">
           <div className="flex flex-col justify-center items-start gap-6 lg:w-1/2">
             <h1 className="font-gill-sans font-bold text-3xl lg:text-7xl leading-[120%] tracking-[-0.96px] lg:tracking-[-2.16px] text-black">
               Because everything starts with believing you are
@@ -144,28 +158,28 @@ export default function Index() {
             </button>
           </div>
           <div className="lg:w-1/2 flex justify-center">
-            <img 
-              src="https://api.builder.io/api/v1/image/assets/TEMP/aeb6591aa0992e0f1a119dda4e425d95261e1f24?width=1106" 
-              alt="Team illustration" 
-              className="w-full max-w-md lg:max-w-lg h-auto"
+            <img
+              src="https://api.builder.io/api/v1/image/assets/TEMP/aeb6591aa0992e0f1a119dda4e425d95261e1f24?width=1106"
+              alt="Team illustration"
+              className="w-full max-w-sm md:max-w-md lg:max-w-lg h-auto mx-auto"
             />
           </div>
         </div>
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="w-full px-4 lg:px-0 py-16 lg:py-32">
+      <section id="projects" className="w-full px-4 lg:px-8 xl:px-0 py-16 lg:py-32">
         <div className="max-w-7xl mx-auto flex flex-col items-center gap-8 lg:gap-16">
           <h2 className="font-gill-sans font-bold text-3xl lg:text-7xl leading-[120%] tracking-[-0.96px] lg:tracking-[-2.16px] text-black">
             Projects
           </h2>
           
-          <div className="w-full flex flex-col lg:flex-row items-start gap-6 lg:gap-24">
+          <div className="w-full flex flex-col lg:flex-row items-start gap-6 lg:gap-32">
             <div className="lg:w-1/2 flex justify-center">
-              <img 
-                src="https://api.builder.io/api/v1/image/assets/TEMP/2785a569c041b1950ce1cc503e61182ca53bd9a5?width=718" 
-                alt="Project illustration" 
-                className="w-full max-w-md h-auto"
+              <img
+                src="https://api.builder.io/api/v1/image/assets/TEMP/2785a569c041b1950ce1cc503e61182ca53bd9a5?width=718"
+                alt="Project illustration"
+                className="w-full max-w-sm md:max-w-md h-auto mx-auto"
               />
             </div>
             <div className="lg:w-1/2">
@@ -182,28 +196,28 @@ export default function Index() {
           </div>
 
           <div className="w-full flex justify-center mt-8 lg:mt-16">
-            <img 
-              src="https://api.builder.io/api/v1/image/assets/TEMP/a937afc03306a051c8043cbd0977df0234d4f0ea?width=1104" 
-              alt="Additional project illustration" 
-              className="w-full max-w-lg h-auto"
+            <img
+              src="https://api.builder.io/api/v1/image/assets/TEMP/a937afc03306a051c8043cbd0977df0234d4f0ea?width=1104"
+              alt="Additional project illustration"
+              className="w-full max-w-md md:max-w-lg h-auto mx-auto"
             />
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="w-full px-4 lg:px-0 py-16 lg:py-32">
+      <section id="about" className="w-full px-4 lg:px-8 xl:px-0 py-16 lg:py-32">
         <div className="max-w-7xl mx-auto flex flex-col items-center gap-8 lg:gap-16">
           <h2 className="font-gill-sans font-bold text-3xl lg:text-7xl leading-[120%] tracking-[-0.96px] lg:tracking-[-2.16px] text-black">
             About us
           </h2>
           
-          <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-24">
+          <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-32">
             <div className="lg:w-1/2 flex justify-center">
-              <img 
-                src="https://api.builder.io/api/v1/image/assets/TEMP/e18d29b28501d84e34086be05d5ef2a5654c8e6d?width=722" 
-                alt="About us illustration" 
-                className="w-full max-w-md h-auto"
+              <img
+                src="https://api.builder.io/api/v1/image/assets/TEMP/e18d29b28501d84e34086be05d5ef2a5654c8e6d?width=722"
+                alt="About us illustration"
+                className="w-full max-w-sm md:max-w-md h-auto mx-auto"
               />
             </div>
             <div className="lg:w-1/2">
@@ -239,13 +253,13 @@ export default function Index() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="w-full px-4 lg:px-0 py-16 lg:py-32">
+      <section id="contact" className="w-full px-4 lg:px-8 xl:px-0 py-16 lg:py-32">
         <div className="max-w-7xl mx-auto flex flex-col items-center gap-8 lg:gap-16">
           <h2 className="font-gill-sans font-bold text-3xl lg:text-7xl leading-[120%] tracking-[-0.96px] lg:tracking-[-2.16px] text-black text-center">
             Contact us
           </h2>
           
-          <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-24">
+          <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-32">
             <div className="lg:w-1/2 w-full">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
@@ -300,10 +314,10 @@ export default function Index() {
             </div>
             
             <div className="lg:w-1/2 flex justify-center">
-              <img 
-                src="https://api.builder.io/api/v1/image/assets/TEMP/0dd979f6d97ac4aa15d61a99a715b109041f1b8e?width=912" 
-                alt="Contact illustration" 
-                className="w-full max-w-md h-auto"
+              <img
+                src="https://api.builder.io/api/v1/image/assets/TEMP/0dd979f6d97ac4aa15d61a99a715b109041f1b8e?width=912"
+                alt="Contact illustration"
+                className="w-full max-w-sm md:max-w-md h-auto mx-auto"
               />
             </div>
           </div>
