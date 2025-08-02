@@ -204,9 +204,15 @@ export default function Index() {
       {/* Projects Section */}
       <section id="projects" className="w-full px-4 lg:px-16 xl:px-0 py-16 lg:py-32">
         <div className="max-w-7xl mx-auto flex flex-col items-center gap-8 lg:gap-16">
-          <h2 className="font-gill-sans font-bold text-3xl lg:text-7xl leading-[120%] tracking-[-0.96px] lg:tracking-[-2.16px] text-black">
+          <motion.h2
+            className="font-gill-sans font-bold text-3xl lg:text-7xl leading-[120%] tracking-[-0.96px] lg:tracking-[-2.16px] text-black"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            viewport={{ once: true, margin: "-50px" }}
+          >
             Projects
-          </h2>
+          </motion.h2>
           
           <div className="w-full flex flex-col lg:flex-row items-start gap-6 lg:gap-32">
             <div className="w-full lg:w-1/2 flex justify-center items-center">
@@ -220,7 +226,13 @@ export default function Index() {
                 viewport={{ once: true, margin: "-100px" }}
               />
             </div>
-            <div className="lg:w-1/2">
+            <motion.div
+              className="lg:w-1/2"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+              viewport={{ once: true, margin: "-100px" }}
+            >
               <h3 className="font-gill-sans font-bold text-xl lg:text-2xl text-black mb-4">
                 Digital platform for nutritionists (under development)
               </h3>
@@ -230,7 +242,7 @@ export default function Index() {
               <p className="font-gill-sans text-base leading-[140%] tracking-[-0.48px] text-black mt-4">
                 Project in progress. More details coming soon.
               </p>
-            </div>
+            </motion.div>
           </div>
 
           <div className="w-full flex justify-center mt-8 lg:mt-16">
@@ -250,9 +262,15 @@ export default function Index() {
       {/* About Section */}
       <section id="about" className="w-full px-4 lg:px-16 xl:px-0 py-16 lg:py-32">
         <div className="max-w-7xl mx-auto flex flex-col items-center gap-8 lg:gap-16">
-          <h2 className="font-gill-sans font-bold text-3xl lg:text-7xl leading-[120%] tracking-[-0.96px] lg:tracking-[-2.16px] text-black">
+          <motion.h2
+            className="font-gill-sans font-bold text-3xl lg:text-7xl leading-[120%] tracking-[-0.96px] lg:tracking-[-2.16px] text-black"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            viewport={{ once: true, margin: "-50px" }}
+          >
             About us
-          </h2>
+          </motion.h2>
           
           <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-32">
             <div className="lg:w-1/2 flex justify-center items-center">
@@ -266,7 +284,13 @@ export default function Index() {
                 viewport={{ once: true, margin: "-100px" }}
               />
             </div>
-            <div className="lg:w-1/2">
+            <motion.div
+              className="lg:w-1/2"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+              viewport={{ once: true, margin: "-100px" }}
+            >
               <h3 className="font-gill-sans font-bold text-xl lg:text-2xl text-black mb-6">
                 We are Ivelina and Mario, and this is i'm solutions.
               </h3>
@@ -293,7 +317,7 @@ export default function Index() {
                   This is not just about apps. It's about how to build something worthwhile.
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -301,9 +325,15 @@ export default function Index() {
       {/* Contact Section */}
       <section id="contact" className="w-full px-4 lg:px-16 xl:px-0 py-16 lg:py-32">
         <div className="max-w-7xl mx-auto flex flex-col items-center gap-8 lg:gap-16">
-          <h2 className="font-gill-sans font-bold text-3xl lg:text-7xl leading-[120%] tracking-[-0.96px] lg:tracking-[-2.16px] text-black text-center">
+          <motion.h2
+            className="font-gill-sans font-bold text-3xl lg:text-7xl leading-[120%] tracking-[-0.96px] lg:tracking-[-2.16px] text-black text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            viewport={{ once: true, margin: "-50px" }}
+          >
             Contact us
-          </h2>
+          </motion.h2>
           
           <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-32">
             <div className="lg:w-1/2 w-full">
