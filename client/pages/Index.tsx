@@ -1,5 +1,6 @@
 import { useState } from "react";
 import emailjs from '@emailjs/browser';
+import { motion } from 'framer-motion';
 
 export default function Index() {
   const [formData, setFormData] = useState({
@@ -187,10 +188,14 @@ export default function Index() {
             </button>
           </div>
           <div className="lg:w-1/2 flex justify-center">
-            <img
+            <motion.img
               src="https://api.builder.io/api/v1/image/assets/TEMP/aeb6591aa0992e0f1a119dda4e425d95261e1f24?width=1106"
               alt="Team illustration"
               className="w-full max-w-sm md:max-w-md lg:max-w-lg h-auto mx-auto block"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              viewport={{ once: true, margin: "-100px" }}
             />
           </div>
         </div>
@@ -204,11 +209,15 @@ export default function Index() {
           </h2>
           
           <div className="w-full flex flex-col lg:flex-row items-start gap-6 lg:gap-32">
-            <div className="lg:w-1/2 flex justify-center items-center">
-              <img
+            <div className="w-full lg:w-1/2 flex justify-center items-center">
+              <motion.img
                 src="https://api.builder.io/api/v1/image/assets/TEMP/2785a569c041b1950ce1cc503e61182ca53bd9a5?width=718"
                 alt="Project illustration"
                 className="w-full max-w-xs md:max-w-sm lg:max-w-md h-auto mx-auto block"
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+                viewport={{ once: true, margin: "-100px" }}
               />
             </div>
             <div className="lg:w-1/2">
@@ -225,10 +234,14 @@ export default function Index() {
           </div>
 
           <div className="w-full flex justify-center mt-8 lg:mt-16">
-            <img
+            <motion.img
               src="https://api.builder.io/api/v1/image/assets/TEMP/a937afc03306a051c8043cbd0977df0234d4f0ea?width=1104"
               alt="Additional project illustration"
               className="w-full max-w-sm md:max-w-md lg:max-w-lg h-auto mx-auto block"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+              viewport={{ once: true, margin: "-100px" }}
             />
           </div>
         </div>
@@ -243,10 +256,14 @@ export default function Index() {
           
           <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-32">
             <div className="lg:w-1/2 flex justify-center items-center">
-              <img
+              <motion.img
                 src="https://api.builder.io/api/v1/image/assets/TEMP/e18d29b28501d84e34086be05d5ef2a5654c8e6d?width=722"
                 alt="About us illustration"
                 className="w-full max-w-xs md:max-w-sm lg:max-w-md h-auto mx-auto block"
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+                viewport={{ once: true, margin: "-100px" }}
               />
             </div>
             <div className="lg:w-1/2">
@@ -346,10 +363,14 @@ export default function Index() {
             </div>
             
             <div className="lg:w-1/2 flex justify-center items-center">
-              <img
+              <motion.img
                 src="https://api.builder.io/api/v1/image/assets/TEMP/0dd979f6d97ac4aa15d61a99a715b109041f1b8e?width=912"
                 alt="Contact illustration"
                 className="w-full max-w-xs md:max-w-sm lg:max-w-md h-auto mx-auto block"
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+                viewport={{ once: true, margin: "-100px" }}
               />
             </div>
           </div>
