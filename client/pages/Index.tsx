@@ -1,4 +1,5 @@
 import { useState } from "react";
+import emailjs from '@emailjs/browser';
 
 export default function Index() {
   const [formData, setFormData] = useState({
@@ -8,13 +9,41 @@ export default function Index() {
   });
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
-    // Reset form after submission
-    setFormData({ name: "", email: "", message: "" });
-    alert('Thank you for your message! We\'ll get back to you soon.');
+
+    try {
+      // Initialize EmailJS
+      emailjs.init('Li-IsF_Rv_SW6GEY0');
+
+      // Prepare template parameters
+      const templateParams = {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+        time: new Date().toLocaleString('es-ES', {
+          year: 'numeric',
+          month: '2-digit',
+          day: '2-digit',
+          hour: '2-digit',
+          minute: '2-digit'
+        })
+      };
+
+      // Send email
+      await emailjs.send(
+        'service_9yatyia',
+        'template_ta16eku',
+        templateParams
+      );
+
+      // Reset form after successful submission
+      setFormData({ name: "", email: "", message: "" });
+      alert('¡Gracias por tu mensaje! Te responderemos pronto.');
+    } catch (error) {
+      console.error('Error sending email:', error);
+      alert('Hubo un error enviando el mensaje. Por favor intenta de nuevo.');
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -101,16 +130,16 @@ export default function Index() {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 relative w-6 h-6 flex items-center justify-center"
+            className="lg:hidden p-2 relative w-8 h-8 flex items-center justify-center"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {!mobileMenuOpen ? (
-              <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 2V0H18V2H0ZM0 14V12H18V14H0ZM0 8V6H18V8H0Z" fill="#1C1B1F"/>
+              <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 2V0H24V2H0ZM0 18V16H24V18H0ZM0 10V8H24V10H0Z" fill="#1C1B1F"/>
               </svg>
             ) : (
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 1L17 17M17 1L1 17" stroke="#1C1B1F" strokeWidth="2" strokeLinecap="round"/>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 2L22 22M22 2L2 22" stroke="#1C1B1F" strokeWidth="2" strokeLinecap="round"/>
               </svg>
             )}
           </button>
@@ -144,7 +173,7 @@ export default function Index() {
       </header>
 
       {/* Hero Section */}
-      <section className="w-full px-4 lg:px-8 xl:px-0 pb-16 lg:pb-32 pt-8 lg:pt-16">
+      <section className="w-full px-4 lg:px-16 xl:px-0 pb-16 lg:pb-32 pt-8 lg:pt-16">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-32">
           <div className="flex flex-col justify-center items-start gap-6 lg:w-1/2">
             <h1 className="font-gill-sans font-bold text-3xl lg:text-7xl leading-[120%] tracking-[-0.96px] lg:tracking-[-2.16px] text-black">
@@ -168,7 +197,7 @@ export default function Index() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="w-full px-4 lg:px-8 xl:px-0 py-16 lg:py-32">
+      <section id="projects" className="w-full px-4 lg:px-16 xl:px-0 py-16 lg:py-32">
         <div className="max-w-7xl mx-auto flex flex-col items-center gap-8 lg:gap-16">
           <h2 className="font-gill-sans font-bold text-3xl lg:text-7xl leading-[120%] tracking-[-0.96px] lg:tracking-[-2.16px] text-black">
             Projects
@@ -206,7 +235,7 @@ export default function Index() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="w-full px-4 lg:px-8 xl:px-0 py-16 lg:py-32">
+      <section id="about" className="w-full px-4 lg:px-16 xl:px-0 py-16 lg:py-32">
         <div className="max-w-7xl mx-auto flex flex-col items-center gap-8 lg:gap-16">
           <h2 className="font-gill-sans font-bold text-3xl lg:text-7xl leading-[120%] tracking-[-0.96px] lg:tracking-[-2.16px] text-black">
             About us
@@ -253,7 +282,7 @@ export default function Index() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="w-full px-4 lg:px-8 xl:px-0 py-16 lg:py-32">
+      <section id="contact" className="w-full px-4 lg:px-16 xl:px-0 py-16 lg:py-32">
         <div className="max-w-7xl mx-auto flex flex-col items-center gap-8 lg:gap-16">
           <h2 className="font-gill-sans font-bold text-3xl lg:text-7xl leading-[120%] tracking-[-0.96px] lg:tracking-[-2.16px] text-black text-center">
             Contact us
