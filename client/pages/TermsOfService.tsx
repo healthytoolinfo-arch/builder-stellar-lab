@@ -8,7 +8,14 @@ export default function TermsOfService() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FFFFFC]">
+    <>
+      <SEOHead
+        title="Terms of Service | i'm solutions"
+        description="Terms of Service for i'm solutions. Read our terms and conditions for using our digital solutions platform and services."
+        keywords="terms of service, terms and conditions, i'm solutions, user agreement, legal terms, digital solutions"
+        canonicalUrl="https://imsolutions.com/terms-of-service"
+      />
+      <div className="min-h-screen bg-[#FFFFFC]">
       {/* Header */}
       <header className="w-full bg-[#FFFFFC] py-4 lg:py-6 px-4 lg:px-16 xl:px-0 sticky top-0 z-50 border-b border-gray-200">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
@@ -146,6 +153,7 @@ export default function TermsOfService() {
           </motion.div>
         </div>
       </main>
-    </div>
+      </div>
+    </>
   );
 }
