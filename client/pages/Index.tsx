@@ -69,22 +69,50 @@ export default function Index() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      // Get header height dynamically
-      const header = document.querySelector('header');
-      const headerHeight = header ? header.offsetHeight + 20 : 120; // Add 20px buffer
+      // Force close mobile menu first
+      setMobileMenuOpen(false);
 
-      // Calculate position with proper offset
-      const elementPosition = element.offsetTop - headerHeight;
+      // Add a small delay to ensure menu closes before scrolling
+      setTimeout(() => {
+        // Get header height more reliably
+        const header = document.querySelector('header');
+        let headerHeight = 100; // Default fallback
 
-      // Use requestAnimationFrame for better cross-browser compatibility
-      requestAnimationFrame(() => {
+        if (header) {
+          const headerRect = header.getBoundingClientRect();
+          headerHeight = headerRect.height + 30; // Add buffer
+        }
+
+        // Get element position more reliably
+        const elementRect = element.getBoundingClientRect();
+        const elementTop = elementRect.top + window.pageYOffset;
+        const targetPosition = elementTop - headerHeight;
+
+        // Use both methods for maximum compatibility
+        // Method 1: Standard scroll
         window.scrollTo({
-          top: Math.max(0, elementPosition), // Ensure we don't scroll to negative values
+          top: Math.max(0, targetPosition),
           behavior: "smooth"
         });
-      });
+
+        // Method 2: Fallback for responsive mode issues
+        if (window.scrollY === targetPosition) {
+          // If scroll didn't work, try alternative method
+          element.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+            inline: "nearest"
+          });
+
+          // Adjust for header after scrollIntoView
+          setTimeout(() => {
+            window.scrollBy(0, -headerHeight);
+          }, 100);
+        }
+      }, 50); // Small delay to ensure smooth operation
+    } else {
+      setMobileMenuOpen(false);
     }
-    setMobileMenuOpen(false);
   };
 
   const scrollToTop = () => {
