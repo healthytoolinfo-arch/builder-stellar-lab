@@ -374,7 +374,11 @@ export default function Index() {
                 transition={{ duration: 0.3, delay: 0.1 }}
               >
                 <button
-                  onClick={() => scrollToSection("projects")}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    scrollToSection("projects");
+                  }}
                   className={`font-gill-sans text-xl text-black hover:opacity-70 transition-all duration-300 text-left relative ${
                     activeSection === "projects"
                       ? 'after:content-[""] after:absolute after:bottom-[-4px] after:left-0 after:w-8 after:h-0.5 after:bg-black'
