@@ -470,7 +470,8 @@ export default function Index() {
             <div className="w-full lg:w-1/2 flex justify-center items-center">
               <motion.img
                 src="https://api.builder.io/api/v1/image/assets/TEMP/2785a569c041b1950ce1cc503e61182ca53bd9a5?width=718"
-                alt="Project illustration"
+                alt="Digital platform for nutritionists - innovative app development for nutrition professionals"
+                loading="lazy"
                 className="w-full max-w-xs md:max-w-sm lg:max-w-md h-auto mx-auto block"
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
