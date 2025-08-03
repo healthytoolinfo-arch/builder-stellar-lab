@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import { motion, AnimatePresence } from "framer-motion";
+import SEOHead from "../components/SEOHead";
 
 export default function Index() {
   const [formData, setFormData] = useState({
