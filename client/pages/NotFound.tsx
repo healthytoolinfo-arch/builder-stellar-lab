@@ -5,10 +5,8 @@ const NotFound = () => {
   return (
     <div className="min-h-screen bg-[#FFFFFC] flex flex-col items-center justify-center px-4">
       <div className="text-center max-w-4xl mx-auto">
-
-
         {/* Illustration */}
-        <motion.div 
+        <motion.div
           className="mb-8"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -28,7 +26,8 @@ const NotFound = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
         >
-          "Oops! You've hit a dead end… but hey, even legends get lost sometimes!"
+          "Oops! You've hit a dead end… but hey, even legends get lost
+          sometimes!"
         </motion.p>
 
         {/* Back to Home Button */}
@@ -37,7 +36,7 @@ const NotFound = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
         >
-          <Link 
+          <Link
             to="/"
             className="inline-flex items-center justify-center px-8 py-4 bg-black text-white font-gill-sans font-semibold text-lg rounded-lg hover:bg-gray-700 hover:scale-105 transition-all duration-300 transform"
           >
@@ -46,7 +45,7 @@ const NotFound = () => {
         </motion.div>
 
         {/* Decorative elements */}
-        <motion.div 
+        <motion.div
           className="absolute top-1/4 left-1/4 text-3xl opacity-20"
           initial={{ opacity: 0, rotate: -45 }}
           animate={{ opacity: 0.2, rotate: 0 }}
@@ -54,7 +53,7 @@ const NotFound = () => {
         >
           ⚡
         </motion.div>
-        <motion.div 
+        <motion.div
           className="absolute top-1/3 right-1/4 text-2xl opacity-20"
           initial={{ opacity: 0, rotate: 45 }}
           animate={{ opacity: 0.2, rotate: 0 }}
@@ -62,7 +61,6 @@ const NotFound = () => {
         >
           ✨
         </motion.div>
-
       </div>
     </div>
   );

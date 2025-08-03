@@ -75,7 +75,7 @@ export default function Index() {
       // Add a small delay to ensure menu closes before scrolling
       setTimeout(() => {
         // Get header height more reliably
-        const header = document.querySelector('header');
+        const header = document.querySelector("header");
         let headerHeight = 100; // Default fallback
 
         if (header) {
@@ -92,7 +92,7 @@ export default function Index() {
         // Method 1: Standard scroll
         window.scrollTo({
           top: Math.max(0, targetPosition),
-          behavior: "smooth"
+          behavior: "smooth",
         });
 
         // Method 2: Fallback for responsive mode issues
@@ -101,7 +101,7 @@ export default function Index() {
           element.scrollIntoView({
             behavior: "smooth",
             block: "start",
-            inline: "nearest"
+            inline: "nearest",
           });
 
           // Adjust for header after scrollIntoView
@@ -124,16 +124,16 @@ export default function Index() {
   useEffect(() => {
     const handleScroll = () => {
       const sections = ["projects", "about", "contact"];
-      const header = document.querySelector('header');
+      const header = document.querySelector("header");
       const headerHeight = header ? header.offsetHeight + 50 : 150; // Dynamic header height + buffer
       const scrollPosition = window.scrollY;
 
       // Find the section that's currently in view
-      let currentSection = '';
+      let currentSection = "";
 
       // Get viewport height for better detection
       const viewportHeight = window.innerHeight;
-      const scrollMiddle = scrollPosition + (viewportHeight / 3); // Use top third of viewport
+      const scrollMiddle = scrollPosition + viewportHeight / 3; // Use top third of viewport
 
       for (const sectionId of sections) {
         const section = document.getElementById(sectionId);
@@ -152,7 +152,7 @@ export default function Index() {
 
       // If we're at the very top, no section is active
       if (scrollPosition < 200) {
-        currentSection = '';
+        currentSection = "";
       }
 
       setActiveSection(currentSection);
@@ -657,12 +657,16 @@ export default function Index() {
                       <motion.div
                         className="w-4 h-4 border-2 border-white border-t-transparent rounded-full"
                         animate={{ rotate: 360 }}
-                        transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                        transition={{
+                          duration: 1,
+                          repeat: Infinity,
+                          ease: "linear",
+                        }}
                       />
                       Sending...
                     </span>
                   ) : (
-                    'Send the message'
+                    "Send the message"
                   )}
                 </motion.button>
 
@@ -681,7 +685,12 @@ export default function Index() {
                           className="flex-shrink-0"
                           initial={{ scale: 0 }}
                           animate={{ scale: 1 }}
-                          transition={{ delay: 0.2, type: "spring", stiffness: 500, damping: 25 }}
+                          transition={{
+                            delay: 0.2,
+                            type: "spring",
+                            stiffness: 500,
+                            damping: 25,
+                          }}
                         >
                           <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
                             <motion.svg
@@ -693,7 +702,11 @@ export default function Index() {
                               strokeWidth="3"
                               initial={{ pathLength: 0 }}
                               animate={{ pathLength: 1 }}
-                              transition={{ delay: 0.4, duration: 0.5, ease: "easeOut" }}
+                              transition={{
+                                delay: 0.4,
+                                duration: 0.5,
+                                ease: "easeOut",
+                              }}
                             >
                               <motion.path d="m9 12 2 2 4-4" />
                             </motion.svg>
