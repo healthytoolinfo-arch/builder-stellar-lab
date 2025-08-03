@@ -12,3 +12,17 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+# Sitemap
+Sitemap: https://imsolutions.com/sitemap.xml
+
+# Allow specific pages
+Allow: /privacy-policy
+Allow: /terms-of-service
+
+# Disallow admin or temp directories (if any in the future)
+Disallow: /admin/
+Disallow: /.well-known/
+
+# Crawl delay (be respectful to bots)
+Crawl-delay: 1
