@@ -879,7 +879,7 @@ export default function Index() {
                 </h4>
                 <div className="flex flex-col gap-3">
                   <p className="font-gill-sans text-gray-300 text-sm">
-                    hello@imsolutions.com
+                    hello@imsolutions.studio
                   </p>
                   <p className="font-gill-sans text-gray-300 text-sm">
                     Spain / Bulgaria
