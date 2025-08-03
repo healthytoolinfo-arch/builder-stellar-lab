@@ -20,7 +20,7 @@ const StructuredData = () => {
     ],
     "foundingLocation": {
       "@type": "Place",
-      "name": "Spain"
+      "name": "Spain / Bulgaria"
     },
     "contactPoint": {
       "@type": "ContactPoint",
