@@ -88,26 +88,32 @@ export default function Index() {
   useEffect(() => {
     const handleScroll = () => {
       const sections = ["projects", "about", "contact"];
-      const scrollPosition = window.scrollY + 100;
+      const headerHeight = 120; // Header height + buffer
+      const scrollPosition = window.scrollY + headerHeight;
+
+      // Find the section that's currently in view
+      let currentSection = '';
 
       for (const sectionId of sections) {
         const section = document.getElementById(sectionId);
         if (section) {
           const { offsetTop, offsetHeight } = section;
-          if (
-            scrollPosition >= offsetTop &&
-            scrollPosition < offsetTop + offsetHeight
-          ) {
-            setActiveSection(sectionId);
-            return;
+          const sectionTop = offsetTop - 50; // Small buffer
+          const sectionBottom = offsetTop + offsetHeight;
+
+          if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+            currentSection = sectionId;
+            break;
           }
         }
       }
 
-      // If we're at the top, no section is active
-      if (window.scrollY < 300) {
-        setActiveSection("");
+      // If we're at the very top, no section is active
+      if (window.scrollY < 200) {
+        currentSection = '';
       }
+
+      setActiveSection(currentSection);
     };
 
     window.addEventListener("scroll", handleScroll);
