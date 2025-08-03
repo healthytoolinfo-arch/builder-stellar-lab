@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import { motion, AnimatePresence } from "framer-motion";
 import SEOHead from "../components/SEOHead";
+import StructuredData from "../components/StructuredData";
 
 export default function Index() {
   const [formData, setFormData] = useState({
