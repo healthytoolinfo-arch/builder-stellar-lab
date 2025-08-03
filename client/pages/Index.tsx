@@ -69,11 +69,19 @@ export default function Index() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const headerHeight = 100; // Approximate header height
+      // Get header height dynamically
+      const header = document.querySelector('header');
+      const headerHeight = header ? header.offsetHeight + 20 : 120; // Add 20px buffer
+
+      // Calculate position with proper offset
       const elementPosition = element.offsetTop - headerHeight;
-      window.scrollTo({
-        top: elementPosition,
-        behavior: "smooth"
+
+      // Use requestAnimationFrame for better cross-browser compatibility
+      requestAnimationFrame(() => {
+        window.scrollTo({
+          top: Math.max(0, elementPosition), // Ensure we don't scroll to negative values
+          behavior: "smooth"
+        });
       });
     }
     setMobileMenuOpen(false);
