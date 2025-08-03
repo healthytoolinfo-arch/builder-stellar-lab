@@ -62,14 +62,7 @@ const NotFound = () => {
         >
           ✨
         </motion.div>
-        <motion.div 
-          className="absolute bottom-1/4 left-1/3 text-xl opacity-20"
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 0.2, scale: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 1.2 }}
-        >
-          ❤️
-        </motion.div>
+
       </div>
     </div>
   );
