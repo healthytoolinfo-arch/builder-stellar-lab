@@ -14,10 +14,10 @@ const NotFound = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
         >
-          <img 
-            src="https://api.builder.io/api/v1/image/assets/TEMP/9de058c79701c509287f0cc92ea3e2ec376cdff9?width=1104" 
+          <img
+            src="https://api.builder.io/api/v1/image/assets/TEMP/9de058c79701c509287f0cc92ea3e2ec376cdff9?width=1104"
             alt="404 illustration with confused characters"
-            className="w-full max-w-sm md:max-w-md lg:max-w-lg h-auto mx-auto"
+            className="w-full max-w-xs md:max-w-sm lg:max-w-md h-auto mx-auto"
           />
         </motion.div>
 
