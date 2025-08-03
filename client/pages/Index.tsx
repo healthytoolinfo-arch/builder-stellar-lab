@@ -719,18 +719,18 @@ export default function Index() {
               © {new Date().getFullYear()} i'm solutions. All rights reserved.
             </p>
             <div className="flex gap-6">
-              <a
-                href="#"
+              <Link
+                to="/privacy-policy"
                 className="font-gill-sans text-gray-400 hover:text-white transition-colors text-sm"
               >
                 Privacy Policy
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                to="/terms-of-service"
                 className="font-gill-sans text-gray-400 hover:text-white transition-colors text-sm"
               >
                 Terms of Service
-              </a>
+              </Link>
             </div>
           </div>
         </div>
