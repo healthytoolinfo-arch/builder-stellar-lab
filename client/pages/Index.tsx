@@ -438,7 +438,8 @@ export default function Index() {
           <div className="lg:w-1/2 flex justify-center">
             <motion.img
               src="https://api.builder.io/api/v1/image/assets/TEMP/aeb6591aa0992e0f1a119dda4e425d95261e1f24?width=1106"
-              alt="Team illustration"
+              alt="i'm solutions team - Ivelina and Mario working on digital solutions and innovative app development"
+              loading="lazy"
               className="w-full max-w-sm md:max-w-md lg:max-w-lg h-auto mx-auto block"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
