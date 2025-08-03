@@ -144,7 +144,7 @@ export default function TermsOfService() {
                   If you have any questions about these Terms of Service, please contact us at:
                 </p>
                 <div className="mt-4 p-4 bg-gray-50 rounded-lg">
-                  <p><strong>Email:</strong> hello@imsolutions.com</p>
+                  <p><strong>Email:</strong> hello@imsolutions.studio</p>
                   <p><strong>Company:</strong> i'm solutions</p>
                   <p><strong>Location:</strong> Spain</p>
                 </div>
