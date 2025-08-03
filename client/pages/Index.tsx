@@ -283,7 +283,11 @@ export default function Index() {
               About us
             </button>
             <button
-              onClick={() => scrollToSection("contact")}
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                scrollToSection("contact");
+              }}
               className={`font-gill-sans text-xl text-black hover:opacity-70 transition-all duration-300 relative ${
                 activeSection === "contact"
                   ? 'after:content-[""] after:absolute after:bottom-[-8px] after:left-0 after:right-0 after:h-0.5 after:bg-black'
