@@ -186,6 +186,7 @@ export default function Index() {
         keywords="digital solutions, app development, nutrition software, startup, Ivelina, Mario, i'm solutions, technology, innovation, Spain, nutrition app, digital platform"
         canonicalUrl="https://imsolutions.com/"
       />
+      <StructuredData />
       <div className="min-h-screen bg-[#FFFFFC]">
       {/* Header */}
       <header className="w-full bg-[#FFFFFC] py-4 lg:py-6 px-4 lg:px-16 xl:px-0 sticky top-0 z-50 border-b border-transparent transition-all duration-300">
