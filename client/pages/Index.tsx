@@ -848,19 +848,31 @@ export default function Index() {
                 </h4>
                 <nav className="flex flex-col gap-3">
                   <button
-                    onClick={() => scrollToSection("projects")}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      scrollToSection("projects");
+                    }}
                     className="font-gill-sans text-gray-300 hover:text-white transition-colors text-left"
                   >
                     Projects
                   </button>
                   <button
-                    onClick={() => scrollToSection("about")}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      scrollToSection("about");
+                    }}
                     className="font-gill-sans text-gray-300 hover:text-white transition-colors text-left"
                   >
                     About us
                   </button>
                   <button
-                    onClick={() => scrollToSection("contact")}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      scrollToSection("contact");
+                    }}
                     className="font-gill-sans text-gray-300 hover:text-white transition-colors text-left"
                   >
                     Contact
