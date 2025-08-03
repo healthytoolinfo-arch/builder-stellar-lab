@@ -22,8 +22,8 @@ const NotFound = () => {
         </motion.div>
 
         {/* Message */}
-        <motion.p 
-          className="font-gill-sans text-2xl md:text-3xl lg:text-4xl text-black leading-tight mb-12 max-w-3xl mx-auto"
+        <motion.p
+          className="font-gill-sans text-xl md:text-2xl lg:text-3xl text-black leading-tight mb-8 max-w-3xl mx-auto px-4"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
