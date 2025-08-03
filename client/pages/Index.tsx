@@ -11,9 +11,12 @@ export default function Index() {
   });
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showConfirmation, setShowConfirmation] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
     try {
       // Initialize EmailJS
@@ -36,12 +39,21 @@ export default function Index() {
       // Send email
       await emailjs.send("service_9yatyia", "template_ta16eku", templateParams);
 
+      // Show success state
+      setShowConfirmation(true);
+
       // Reset form after successful submission
       setFormData({ name: "", email: "", message: "" });
-      alert("¡Gracias por tu mensaje! Te responderemos pronto.");
+
+      // Hide confirmation after 5 seconds
+      setTimeout(() => {
+        setShowConfirmation(false);
+      }, 5000);
     } catch (error) {
       console.error("Error sending email:", error);
       alert("Hubo un error enviando el mensaje. Por favor intenta de nuevo.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -565,12 +577,81 @@ export default function Index() {
                   />
                 </div>
 
-                <button
+                <motion.button
                   type="submit"
-                  className="w-full lg:w-auto px-4 py-3 bg-black text-white font-inter font-bold text-base rounded-lg hover:bg-gray-700 hover:scale-105 transition-all duration-300 transform"
+                  disabled={isSubmitting}
+                  className="w-full lg:w-auto px-4 py-3 bg-black text-white font-inter font-bold text-base rounded-lg hover:bg-gray-700 hover:scale-105 transition-all duration-300 transform disabled:opacity-70 disabled:cursor-not-allowed"
+                  whileTap={{ scale: 0.95 }}
                 >
-                  Contact us
-                </button>
+                  {isSubmitting ? (
+                    <span className="flex items-center justify-center gap-2">
+                      <motion.div
+                        className="w-4 h-4 border-2 border-white border-t-transparent rounded-full"
+                        animate={{ rotate: 360 }}
+                        transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                      />
+                      Sending...
+                    </span>
+                  ) : (
+                    'Send the message'
+                  )}
+                </motion.button>
+
+                {/* Success Confirmation */}
+                <AnimatePresence>
+                  {showConfirmation && (
+                    <motion.div
+                      className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg"
+                      initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: -20, scale: 0.95 }}
+                      transition={{ duration: 0.5, ease: "easeOut" }}
+                    >
+                      <div className="flex items-center gap-3">
+                        <motion.div
+                          className="flex-shrink-0"
+                          initial={{ scale: 0 }}
+                          animate={{ scale: 1 }}
+                          transition={{ delay: 0.2, type: "spring", stiffness: 500, damping: 25 }}
+                        >
+                          <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                            <motion.svg
+                              width="16"
+                              height="16"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="white"
+                              strokeWidth="3"
+                              initial={{ pathLength: 0 }}
+                              animate={{ pathLength: 1 }}
+                              transition={{ delay: 0.4, duration: 0.5, ease: "easeOut" }}
+                            >
+                              <motion.path d="m9 12 2 2 4-4" />
+                            </motion.svg>
+                          </div>
+                        </motion.div>
+                        <div>
+                          <motion.h4
+                            className="font-gill-sans font-bold text-green-800 text-lg"
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.3, duration: 0.4 }}
+                          >
+                            ¡Message sent successfully! 🎉
+                          </motion.h4>
+                          <motion.p
+                            className="font-gill-sans text-green-700 text-sm mt-1"
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.4, duration: 0.4 }}
+                          >
+                            Thanks for reaching out! We'll get back to you soon.
+                          </motion.p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </form>
             </div>
 
