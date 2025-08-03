@@ -882,7 +882,7 @@ export default function Index() {
                     hello@imsolutions.com
                   </p>
                   <p className="font-gill-sans text-gray-300 text-sm">
-                    Based in Spain
+                    Spain / Bulgaria
                   </p>
                 </div>
               </div>
