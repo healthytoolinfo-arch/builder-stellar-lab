@@ -562,53 +562,28 @@ export default function Index() {
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
               viewport={{ once: true, margin: "-100px" }}
             >
-              <h3 className="font-gill-sans font-bold text-xl lg:text-2xl text-black mb-6">
-                We are Ivelina and Mario, and this is i'm solutions.
-              </h3>
               <div className="space-y-4 font-gill-sans text-base leading-[140%] tracking-[-0.48px] text-black">
                 <p>
-                  We met in a startup incubator, working on opposite projects
-                  but sharing the same energy: the desire to build something
-                  with impact. From the first moment we knew that someday we
-                  would work together. That "someday" came sooner than expected.
+                  At I'M Solutions, we design and develop digital products and services that solve real-world problems with simplicity, purpose, and a human touch.
                 </p>
                 <p>
-                  Ivelina had an idea in her head, born from her experience with
-                  nutritionists: why wasn't there a really useful, human and
-                  effective tool for the daily work of these professionals? She
-                  told Mario about it. He didn't hesitate. That's where it all
-                  began. But it was not easy. In fact, it was quite the
-                  opposite.
+                  Born from a shared passion for technology, innovation, and problem-solving, I'M Solutions was founded by Ivelina and Mario—two professionals with complementary strengths and a unified vision: to build meaningful digital solutions that improve everyday life.
                 </p>
                 <p>
-                  In the first months we faced block after block: ideas that
-                  didn't fit, functionalities we didn't know how to solve,
-                  uncomfortable silences after sending surveys... Until we made
-                  a decision that has marked everything we are as a team: focus
-                  on what we can do today, and leave for tomorrow what doesn't
-                  depend on us yet. Since then, we moved forward step by step,
-                  but without stopping.
+                  Ivelina, a seasoned Product Manager, spent years exploring how to turn complex challenges into simple, intuitive experiences. Frustrated by the limitations of waiting for the "perfect moment," she made a bold move—becoming the first client of her own startup. That mindset shift sparked the foundation of IM Solutions: start small, solve clearly, build with heart.
                 </p>
                 <p>
-                  This is how our first app was born, designed for nutrition
-                  professionals: functional, flexible, forward-looking, and
-                  built from empathy with those who are going to use it. And so
-                  i'm solutions was also born, not as an agency or a studio, but
-                  as a company from which to launch products that are born from
-                  real life, from teamwork and from a very specific way of
-                  seeing the world: with attitude, resilience and vision.
+                  Mario brought the technical backbone and operational mindset to bring this vision to life. Together, they created a startup team rooted in trust, creativity, and shared values. Their collaboration proved that the real product is not just the software—it's the synergy between people who believe in long-term value.
                 </p>
-                <h4 className="font-gill-sans font-bold text-xl lg:text-2xl text-black mt-8 mb-4">
-                  Why "i'm"?
-                </h4>
-                <p>
-                  Because together we form the core of this project: Ivelina +
-                  Mario = i'm. And also because we believe in teams with
-                  identity, not only in products with a logo.
+                <p className="font-bold">
+                  Our mission is to create scalable, smart, and impactful digital experiences that empower both the creators and the end users.
                 </p>
-                <p>
-                  This is not just about apps. It's about how to build something
-                  worthwhile.
+                <p className="font-bold">
+                  We don't just build products.<br />
+                  We build solutions that flow.
+                </p>
+                <p className="font-bold text-lg">
+                  i'm is ready to build, are you?
                 </p>
               </div>
             </motion.div>
