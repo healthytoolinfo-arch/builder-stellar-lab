@@ -8,7 +8,14 @@ export default function PrivacyPolicy() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FFFFFC]">
+    <>
+      <SEOHead
+        title="Privacy Policy | i'm solutions"
+        description="Privacy policy for i'm solutions. Learn how we collect, use, and protect your personal information on our digital solutions platform."
+        keywords="privacy policy, data protection, i'm solutions, personal information, GDPR, data security"
+        canonicalUrl="https://imsolutions.com/privacy-policy"
+      />
+      <div className="min-h-screen bg-[#FFFFFC]">
       {/* Header */}
       <header className="w-full bg-[#FFFFFC] py-4 lg:py-6 px-4 lg:px-16 xl:px-0 sticky top-0 z-50 border-b border-gray-200">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
@@ -134,6 +141,7 @@ export default function PrivacyPolicy() {
           </motion.div>
         </div>
       </main>
-    </div>
+      </div>
+    </>
   );
 }
