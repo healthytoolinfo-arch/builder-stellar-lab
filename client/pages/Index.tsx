@@ -388,7 +388,11 @@ export default function Index() {
                   Projects
                 </button>
                 <button
-                  onClick={() => scrollToSection("about")}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    scrollToSection("about");
+                  }}
                   className={`font-gill-sans text-xl text-black hover:opacity-70 transition-all duration-300 text-left relative ${
                     activeSection === "about"
                       ? 'after:content-[""] after:absolute after:bottom-[-4px] after:left-0 after:w-8 after:h-0.5 after:bg-black'
@@ -398,7 +402,11 @@ export default function Index() {
                   About us
                 </button>
                 <button
-                  onClick={() => scrollToSection("contact")}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    scrollToSection("contact");
+                  }}
                   className={`font-gill-sans text-xl text-black hover:opacity-70 transition-all duration-300 text-left relative ${
                     activeSection === "contact"
                       ? 'after:content-[""] after:absolute after:bottom-[-4px] after:left-0 after:w-8 after:h-0.5 after:bg-black'
