@@ -178,7 +178,14 @@ export default function Index() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#FFFFFC]">
+    <>
+      <SEOHead
+        title="i'm solutions | Digital Solutions with Attitude, Resilience & Vision"
+        description="We build meaningful digital solutions focused on real-world problems. Currently developing an innovative platform for nutrition professionals. Founded by Ivelina & Mario in Spain."
+        keywords="digital solutions, app development, nutrition software, startup, Ivelina, Mario, i'm solutions, technology, innovation, Spain, nutrition app, digital platform"
+        canonicalUrl="https://imsolutions.com/"
+      />
+      <div className="min-h-screen bg-[#FFFFFC]">
       {/* Header */}
       <header className="w-full bg-[#FFFFFC] py-4 lg:py-6 px-4 lg:px-16 xl:px-0 sticky top-0 z-50 border-b border-transparent transition-all duration-300">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
@@ -924,6 +931,7 @@ export default function Index() {
           </div>
         </div>
       </footer>
-    </div>
+      </div>
+    </>
   );
 }
