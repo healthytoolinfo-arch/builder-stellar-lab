@@ -5,24 +5,7 @@ const NotFound = () => {
   return (
     <div className="min-h-screen bg-[#FFFFFC] flex flex-col items-center justify-center px-4">
       <div className="text-center max-w-4xl mx-auto">
-        {/* 404 Header */}
-        <motion.div 
-          className="mb-8"
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        >
-          <h1 className="font-gill-sans font-bold text-6xl md:text-8xl lg:text-9xl text-black mb-2">
-            404?
-          </h1>
-          <div className="flex items-center justify-center gap-4 mb-8">
-            <span className="text-2xl md:text-3xl">✕</span>
-            <h2 className="font-gill-sans font-bold text-2xl md:text-4xl text-black">
-              NOT FOUND
-            </h2>
-            <span className="text-2xl md:text-3xl">✕</span>
-          </div>
-        </motion.div>
+
 
         {/* Illustration */}
         <motion.div 
