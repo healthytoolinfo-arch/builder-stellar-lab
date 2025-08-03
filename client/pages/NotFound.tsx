@@ -4,7 +4,14 @@ import SEOHead from "../components/SEOHead";
 
 const NotFound = () => {
   return (
-    <div className="min-h-screen bg-[#FFFFFC] flex flex-col items-center justify-center px-4">
+    <>
+      <SEOHead
+        title="404 - Page Not Found | i'm solutions"
+        description="Oops! The page you're looking for doesn't exist. Return to i'm solutions homepage to explore our digital solutions and projects."
+        keywords="404, page not found, i'm solutions, error page"
+        canonicalUrl="https://imsolutions.com/404"
+      />
+      <div className="min-h-screen bg-[#FFFFFC] flex flex-col items-center justify-center px-4">
       <div className="text-center max-w-4xl mx-auto">
         {/* Illustration */}
         <motion.div
@@ -64,7 +71,8 @@ const NotFound = () => {
           ✨
         </motion.div>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 
