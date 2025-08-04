@@ -901,20 +901,20 @@ export default function Index() {
           {/* Bottom Section */}
           <div className="border-t border-gray-700 mt-12 pt-8 pb-8 lg:pb-0 flex flex-col lg:flex-row justify-between items-center gap-6 lg:gap-4">
             <p className="font-gill-sans text-gray-400 text-sm">
-              © {new Date().getFullYear()} i'm solutions. All rights reserved.
+              {t('footer.copyright', { year: new Date().getFullYear() })}
             </p>
             <div className="flex gap-6">
               <Link
                 to="/privacy-policy"
                 className="font-gill-sans text-gray-400 hover:text-white transition-colors text-sm"
               >
-                Privacy Policy
+                {t('footer.privacy')}
               </Link>
               <Link
                 to="/terms-of-service"
                 className="font-gill-sans text-gray-400 hover:text-white transition-colors text-sm"
               >
-                Terms of Service
+                {t('footer.terms')}
               </Link>
             </div>
           </div>
