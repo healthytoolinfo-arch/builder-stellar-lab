@@ -62,6 +62,7 @@
   "language": {
     "select": "Language",
     "english": "English",
-    "spanish": "Español"
+    "spanish": "Español",
+    "bulgarian": "Български"
   }
 }
