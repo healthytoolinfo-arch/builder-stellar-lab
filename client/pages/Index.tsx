@@ -681,10 +681,10 @@ export default function Index() {
                         animate={{ rotate: 360 }}
                         transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
                       />
-                      Sending...
+                      {t('contact.form.sending')}
                     </span>
                   ) : (
-                    'Send the message'
+                    t('contact.form.button')
                   )}
                 </motion.button>
 
