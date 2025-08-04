@@ -846,7 +846,7 @@ export default function Index() {
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
               <div className="flex flex-col gap-4">
                 <h4 className="font-gill-sans font-bold text-white text-lg">
-                  Navigation
+                  {t('footer.navigation')}
                 </h4>
                 <nav className="flex flex-col gap-3">
                   <button
@@ -857,7 +857,7 @@ export default function Index() {
                     }}
                     className="font-gill-sans text-gray-300 hover:text-white transition-colors text-left"
                   >
-                    Projects
+                    {t('nav.projects')}
                   </button>
                   <button
                     onClick={(e) => {
@@ -867,7 +867,7 @@ export default function Index() {
                     }}
                     className="font-gill-sans text-gray-300 hover:text-white transition-colors text-left"
                   >
-                    About us
+                    {t('nav.about')}
                   </button>
                   <button
                     onClick={(e) => {
@@ -877,21 +877,21 @@ export default function Index() {
                     }}
                     className="font-gill-sans text-gray-300 hover:text-white transition-colors text-left"
                   >
-                    Contact
+                    {t('nav.contact')}
                   </button>
                 </nav>
               </div>
 
               <div className="flex flex-col gap-4">
                 <h4 className="font-gill-sans font-bold text-white text-lg">
-                  Contact
+                  {t('footer.contactInfo')}
                 </h4>
                 <div className="flex flex-col gap-3">
                   <p className="font-gill-sans text-gray-300 text-sm">
                     hello@imsolutions.studio
                   </p>
                   <p className="font-gill-sans text-gray-300 text-sm">
-                    Spain / Bulgaria
+                    {t('footer.location')}
                   </p>
                 </div>
               </div>
