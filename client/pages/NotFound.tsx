@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useTranslation } from 'react-i18next';
 import SEOHead from "../components/SEOHead";
 
 const NotFound = () => {
+  const { t } = useTranslation();
   return (
     <>
       <SEOHead
