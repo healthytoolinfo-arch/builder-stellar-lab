@@ -266,50 +266,53 @@ export default function Index() {
           </button>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-16">
-            <button
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                scrollToSection("projects");
-              }}
-              className={`font-gill-sans text-xl text-black hover:opacity-70 transition-all duration-300 relative ${
-                activeSection === "projects"
-                  ? 'after:content-[""] after:absolute after:bottom-[-8px] after:left-0 after:right-0 after:h-0.5 after:bg-black'
-                  : ""
-              }`}
-            >
-              Projects
-            </button>
-            <button
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                scrollToSection("about");
-              }}
-              className={`font-gill-sans text-xl text-black hover:opacity-70 transition-all duration-300 relative ${
-                activeSection === "about"
-                  ? 'after:content-[""] after:absolute after:bottom-[-8px] after:left-0 after:right-0 after:h-0.5 after:bg-black'
-                  : ""
-              }`}
-            >
-              About us
-            </button>
-            <button
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                scrollToSection("contact");
-              }}
-              className={`font-gill-sans text-xl text-black hover:opacity-70 transition-all duration-300 relative ${
-                activeSection === "contact"
-                  ? 'after:content-[""] after:absolute after:bottom-[-8px] after:left-0 after:right-0 after:h-0.5 after:bg-black'
-                  : ""
-              }`}
-            >
-              Contact
-            </button>
-          </nav>
+          <div className="hidden lg:flex items-center space-x-8">
+            <nav className="flex items-center space-x-16">
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  scrollToSection("projects");
+                }}
+                className={`font-gill-sans text-xl text-black hover:opacity-70 transition-all duration-300 relative ${
+                  activeSection === "projects"
+                    ? 'after:content-[""] after:absolute after:bottom-[-8px] after:left-0 after:right-0 after:h-0.5 after:bg-black'
+                    : ""
+                }`}
+              >
+                {t('nav.projects')}
+              </button>
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  scrollToSection("about");
+                }}
+                className={`font-gill-sans text-xl text-black hover:opacity-70 transition-all duration-300 relative ${
+                  activeSection === "about"
+                    ? 'after:content-[""] after:absolute after:bottom-[-8px] after:left-0 after:right-0 after:h-0.5 after:bg-black'
+                    : ""
+                }`}
+              >
+                {t('nav.about')}
+              </button>
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  scrollToSection("contact");
+                }}
+                className={`font-gill-sans text-xl text-black hover:opacity-70 transition-all duration-300 relative ${
+                  activeSection === "contact"
+                    ? 'after:content-[""] after:absolute after:bottom-[-8px] after:left-0 after:right-0 after:h-0.5 after:bg-black'
+                    : ""
+                }`}
+              >
+                {t('nav.contact')}
+              </button>
+            </nav>
+            <LanguageSelector />
+          </div>
 
           {/* Mobile Menu Button */}
           <button
