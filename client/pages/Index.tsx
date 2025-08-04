@@ -2,8 +2,10 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from 'react-i18next';
 import SEOHead from "../components/SEOHead";
 import StructuredData from "../components/StructuredData";
+import LanguageSelector from "../components/LanguageSelector";
 
 export default function Index() {
   const [formData, setFormData] = useState({
