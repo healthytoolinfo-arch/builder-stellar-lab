@@ -1,17 +1,18 @@
-import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { motion, AnimatePresence } from "framer-motion";
 
 const LanguageSelector = () => {
   const { i18n, t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
 
   const languages = [
-    { code: 'en', name: t('language.english'), flag: '🇺🇸' },
-    { code: 'es', name: t('language.spanish'), flag: '🇪🇸' }
+    { code: "en", name: t("language.english"), flag: "🇺🇸" },
+    { code: "es", name: t("language.spanish"), flag: "🇪🇸" },
   ];
 
-  const currentLanguage = languages.find(lang => lang.code === i18n.language) || languages[0];
+  const currentLanguage =
+    languages.find((lang) => lang.code === i18n.language) || languages[0];
 
   const handleLanguageChange = (langCode: string) => {
     i18n.changeLanguage(langCode);
@@ -23,7 +24,7 @@ const LanguageSelector = () => {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-2 px-3 py-2 rounded-lg bg-transparent hover:bg-gray-100 transition-colors duration-200"
-        aria-label={t('language.select')}
+        aria-label={t("language.select")}
       >
         <span className="text-lg">{currentLanguage.flag}</span>
         <span className="font-gill-sans text-sm font-medium text-black hidden sm:block">
@@ -56,7 +57,7 @@ const LanguageSelector = () => {
               className="fixed inset-0 z-40"
               onClick={() => setIsOpen(false)}
             />
-            
+
             {/* Dropdown */}
             <motion.div
               className="absolute top-full right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 z-50 overflow-hidden"
@@ -70,7 +71,9 @@ const LanguageSelector = () => {
                   key={language.code}
                   onClick={() => handleLanguageChange(language.code)}
                   className={`w-full px-4 py-3 flex items-center gap-3 hover:bg-gray-50 transition-colors duration-150 ${
-                    i18n.language === language.code ? 'bg-gray-50 font-medium' : ''
+                    i18n.language === language.code
+                      ? "bg-gray-50 font-medium"
+                      : ""
                   }`}
                 >
                   <span className="text-lg">{language.flag}</span>
