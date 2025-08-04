@@ -890,9 +890,12 @@ export default function Index() {
                     {t("footer.contactInfo")}
                   </h4>
                   <div className="flex flex-col gap-3">
-                    <p className="font-gill-sans text-gray-300 text-sm">
-                      hello@imsolutions.studio
-                    </p>
+                    <a
+                    href="mailto:hello@imsolutions.studio"
+                    className="font-gill-sans text-gray-300 hover:text-white transition-colors text-sm underline"
+                  >
+                    hello@imsolutions.studio
+                  </a>
                     <p className="font-gill-sans text-gray-300 text-sm">
                       {t("footer.location")}
                     </p>
