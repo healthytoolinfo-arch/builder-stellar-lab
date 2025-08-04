@@ -625,14 +625,14 @@ export default function Index() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label className="block font-inter font-bold text-base text-black mb-2">
-                    Name
+                    {t('contact.form.name')}
                   </label>
                   <input
                     type="text"
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    placeholder="Rachel Joe"
+                    placeholder={t('contact.form.namePlaceholder')}
                     required
                     className="w-full px-6 py-4 border border-black rounded-lg bg-white font-inter text-base text-gray-500 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-black"
                   />
@@ -640,14 +640,14 @@ export default function Index() {
 
                 <div>
                   <label className="block font-inter font-bold text-base text-black mb-2">
-                    Email
+                    {t('contact.form.email')}
                   </label>
                   <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    placeholder="Rachel@domain.com"
+                    placeholder={t('contact.form.emailPlaceholder')}
                     required
                     className="w-full px-6 py-4 border border-black rounded-lg bg-white font-inter text-base text-gray-500 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-black"
                   />
@@ -655,13 +655,13 @@ export default function Index() {
 
                 <div>
                   <label className="block font-inter font-bold text-base text-black mb-2">
-                    Message
+                    {t('contact.form.message')}
                   </label>
                   <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleInputChange}
-                    placeholder="Type your query here....."
+                    placeholder={t('contact.form.messagePlaceholder')}
                     rows={4}
                     required
                     className="w-full px-6 py-4 border border-black rounded-lg bg-white font-inter text-base text-gray-500 placeholder-gray-400 resize-none focus:outline-none focus:ring-2 focus:ring-black"
