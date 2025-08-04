@@ -445,16 +445,16 @@ export default function Index() {
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-32">
           <div className="flex flex-col justify-center items-start gap-6 lg:w-1/2">
             <h1 className="font-gill-sans font-bold text-3xl lg:text-7xl leading-[120%] tracking-[-0.96px] lg:tracking-[-2.16px] text-black">
-              Because everything starts with believing you are
+              {t('hero.title')}
             </h1>
             <p className="font-gill-sans text-xl lg:text-2xl text-black/70 -mt-2">
-              Ready to build
+              {t('hero.tagline')}
             </p>
             <button
               onClick={() => scrollToSection("contact")}
               className="w-full lg:w-80 px-4 py-2 bg-black text-white font-inter font-bold text-base rounded-lg hover:bg-gray-700 hover:scale-105 transition-all duration-300 transform"
             >
-              Contact us
+              {t('hero.button')}
             </button>
           </div>
           <div className="lg:w-1/2 flex justify-center">
