@@ -37,8 +37,7 @@ const NotFound = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
         >
-          "Oops! You've hit a dead end… but hey, even legends get lost
-          sometimes!"
+          {t('notFound.message')}
         </motion.p>
 
         {/* Back to Home Button */}
@@ -51,7 +50,7 @@ const NotFound = () => {
             to="/"
             className="inline-flex items-center justify-center px-8 py-4 bg-black text-white font-gill-sans font-semibold text-lg rounded-lg hover:bg-gray-700 hover:scale-105 transition-all duration-300 transform"
           >
-            Back to Home
+            {t('notFound.button')}
           </Link>
         </motion.div>
 
