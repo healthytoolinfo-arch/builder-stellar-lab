@@ -548,7 +548,7 @@ export default function Index() {
             transition={{ duration: 0.5, ease: "easeOut" }}
             viewport={{ once: true, margin: "-50px" }}
           >
-            About us
+            {t('about.title')}
           </motion.h2>
 
           <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-32">
