@@ -314,11 +314,13 @@ export default function Index() {
             <LanguageSelector />
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden p-2 relative w-8 h-8 flex items-center justify-center"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
+          {/* Mobile Menu Button and Language Selector */}
+          <div className="lg:hidden flex items-center space-x-4">
+            <LanguageSelector />
+            <button
+              className="p-2 relative w-8 h-8 flex items-center justify-center"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
             <div className="relative w-6 h-6 flex flex-col justify-center">
               <motion.span
                 className="absolute w-6 h-0.5 bg-black transform-gpu"
@@ -369,7 +371,8 @@ export default function Index() {
                 }}
               />
             </div>
-          </button>
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
