@@ -728,7 +728,7 @@ export default function Index() {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: 0.3, duration: 0.4 }}
                           >
-                            ¡Message sent successfully! 🎉
+                            {t('contact.form.success.title')}
                           </motion.h4>
                           <motion.p
                             className="font-gill-sans text-green-700 text-sm mt-1"
@@ -736,7 +736,7 @@ export default function Index() {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: 0.4, duration: 0.4 }}
                           >
-                            Thanks for reaching out! We'll get back to you soon.
+                            {t('contact.form.success.description')}
                           </motion.p>
                         </div>
                       </div>
