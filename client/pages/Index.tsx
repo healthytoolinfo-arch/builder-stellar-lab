@@ -509,16 +509,13 @@ export default function Index() {
               viewport={{ once: true, margin: "-100px" }}
             >
               <h3 className="font-gill-sans font-bold text-xl lg:text-2xl text-black mb-4">
-                Digital platform for nutritionists (under development)
+                {t('projects.nutrition.title')}
               </h3>
               <p className="font-gill-sans text-base leading-[140%] tracking-[-0.48px] text-black">
-                We are developing a tool designed to facilitate the daily life
-                of nutrition professionals. An app focused on the organization,
-                personalization and experience of both the nutritionist and the
-                end customer.
+                {t('projects.nutrition.description1')}
               </p>
               <p className="font-gill-sans text-base leading-[140%] tracking-[-0.48px] text-black mt-4">
-                Project in progress. More details coming soon.
+                {t('projects.nutrition.description2')}
               </p>
             </motion.div>
           </div>
