@@ -125,9 +125,9 @@ export default function PrivacyPolicy() {
                   If you have any questions about this Privacy Policy, please contact us at:
                 </p>
                 <div className="mt-4 p-4 bg-gray-50 rounded-lg">
-                  <p><strong>Email:</strong> hello@imsolutions.com</p>
+                  <p><strong>Email:</strong> <a href="mailto:hello@imsolutions.studio" className="text-black hover:text-gray-600 transition-colors underline">hello@imsolutions.studio</a></p>
                   <p><strong>Company:</strong> i'm solutions</p>
-                  <p><strong>Location:</strong> Spain</p>
+                  <p><strong>Based in:</strong> Spain / Bulgaria</p>
                 </div>
               </section>
 
