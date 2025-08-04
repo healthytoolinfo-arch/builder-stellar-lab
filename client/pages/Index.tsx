@@ -404,7 +404,7 @@ export default function Index() {
                       : ""
                   }`}
                 >
-                  Projects
+                  {t('nav.projects')}
                 </button>
                 <button
                   onClick={(e) => {
@@ -418,7 +418,7 @@ export default function Index() {
                       : ""
                   }`}
                 >
-                  About us
+                  {t('nav.about')}
                 </button>
                 <button
                   onClick={(e) => {
@@ -432,7 +432,7 @@ export default function Index() {
                       : ""
                   }`}
                 >
-                  Contact
+                  {t('nav.contact')}
                 </button>
               </motion.div>
             </motion.div>
