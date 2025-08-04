@@ -617,7 +617,7 @@ export default function Index() {
             transition={{ duration: 0.5, ease: "easeOut" }}
             viewport={{ once: true, margin: "-50px" }}
           >
-            Contact us
+            {t('contact.title')}
           </motion.h2>
 
           <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-32">
@@ -902,7 +902,7 @@ export default function Index() {
           {/* Bottom Section */}
           <div className="border-t border-gray-700 mt-12 pt-8 pb-8 lg:pb-0 flex flex-col lg:flex-row justify-between items-center gap-6 lg:gap-4">
             <p className="font-gill-sans text-gray-400 text-sm">
-              �� {new Date().getFullYear()} i'm solutions. All rights reserved.
+              © {new Date().getFullYear()} i'm solutions. All rights reserved.
             </p>
             <div className="flex gap-6">
               <Link
