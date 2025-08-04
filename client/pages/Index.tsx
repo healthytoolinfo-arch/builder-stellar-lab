@@ -573,26 +573,30 @@ export default function Index() {
             >
               <div className="space-y-4 font-gill-sans text-base leading-[140%] tracking-[-0.48px] text-black">
                 <p>
-                  At I'M Solutions, we design and develop digital products and services that solve real-world problems with simplicity, purpose, and a human touch.
+                  {t('about.content.intro')}
                 </p>
                 <p>
-                  Born from a shared passion for technology, innovation, and problem-solving, I'M Solutions was founded by Ivelina and Mario—two professionals with complementary strengths and a unified vision: to build meaningful digital solutions that improve everyday life.
+                  {t('about.content.founding')}
                 </p>
                 <p>
-                  Ivelina, a seasoned Product Manager, spent years exploring how to turn complex challenges into simple, intuitive experiences. Frustrated by the limitations of waiting for the "perfect moment," she made a bold move—becoming the first client of her own startup. That mindset shift sparked the foundation of IM Solutions: start small, solve clearly, build with heart.
+                  {t('about.content.ivelina')}
                 </p>
                 <p>
-                  Mario brought the technical backbone and operational mindset to bring this vision to life. Together, they created a startup team rooted in trust, creativity, and shared values. Their collaboration proved that the real product is not just the software—it's the synergy between people who believe in long-term value.
+                  {t('about.content.mario')}
                 </p>
                 <p className="font-bold">
-                  Our mission is to create scalable, smart, and impactful digital experiences that empower both the creators and the end users.
+                  {t('about.content.mission')}
                 </p>
                 <p className="font-bold">
-                  We don't just build products.<br />
-                  We build solutions that flow.
+                  {t('about.content.philosophy', { returnObjects: true }).split('\\n').map((line: string, index: number) => (
+                    <span key={index}>
+                      {line}
+                      {index === 0 && <br />}
+                    </span>
+                  ))}
                 </p>
                 <p className="font-bold text-lg">
-                  i'm is ready to build, are you?
+                  {t('about.content.cta')}
                 </p>
               </div>
             </motion.div>
@@ -898,7 +902,7 @@ export default function Index() {
           {/* Bottom Section */}
           <div className="border-t border-gray-700 mt-12 pt-8 pb-8 lg:pb-0 flex flex-col lg:flex-row justify-between items-center gap-6 lg:gap-4">
             <p className="font-gill-sans text-gray-400 text-sm">
-              © {new Date().getFullYear()} i'm solutions. All rights reserved.
+              �� {new Date().getFullYear()} i'm solutions. All rights reserved.
             </p>
             <div className="flex gap-6">
               <Link
