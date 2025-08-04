@@ -8,6 +8,7 @@ import StructuredData from "../components/StructuredData";
 import LanguageSelector from "../components/LanguageSelector";
 
 export default function Index() {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
