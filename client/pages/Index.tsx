@@ -838,8 +838,7 @@ export default function Index() {
                 </svg>
               </button>
               <p className="font-gill-sans text-sm text-gray-300 max-w-xs">
-                Building meaningful digital solutions with attitude, resilience
-                and vision.
+                {t('footer.description')}
               </p>
             </div>
 
