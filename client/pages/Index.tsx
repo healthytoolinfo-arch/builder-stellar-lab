@@ -485,7 +485,7 @@ export default function Index() {
             transition={{ duration: 0.5, ease: "easeOut" }}
             viewport={{ once: true, margin: "-50px" }}
           >
-            Projects
+            {t('projects.title')}
           </motion.h2>
 
           <div className="w-full flex flex-col lg:flex-row items-start gap-6 lg:gap-32">
