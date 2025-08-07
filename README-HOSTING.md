@@ -5,23 +5,27 @@ Esta es la versión estática de la aplicación i'm solutions, convertida desde 
 ## Archivos principales
 
 ### Páginas principales
+
 - `index.html` - Página principal con toda la información de la empresa
 - `contact.php` - Formulario de contacto funcional con envío por email
 - `privacy-policy.php` - Política de privacidad
 - `terms-of-service.php` - Términos de servicio
 
 ### Recursos
+
 - `assets/styles.css` - Estilos CSS principales
 - `assets/` - Carpeta para imágenes y recursos adicionales
 
 ## Configuración del servidor
 
 ### Requisitos mínimos
+
 - PHP 7.0 o superior
 - Función `mail()` habilitada (para el formulario de contacto)
 - Soporte para archivos HTML y PHP
 
 ### Configuración del email
+
 Para que el formulario de contacto funcione correctamente, edita `contact.php` y verifica:
 
 ```php
@@ -29,6 +33,7 @@ $to = "hello@imsolutions.studio"; // Cambia por tu email
 ```
 
 ### Estructura de archivos para subir
+
 ```
 /
 ├── index.html
@@ -43,6 +48,7 @@ $to = "hello@imsolutions.studio"; // Cambia por tu email
 ## Características incluidas
 
 ### ✅ Funcionalidad implementada
+
 - Diseño completamente responsive
 - Navegación suave entre secciones
 - Formulario de contacto funcional con PHP
@@ -53,6 +59,7 @@ $to = "hello@imsolutions.studio"; // Cambia por tu email
 - Estructura semántica HTML5
 
 ### 🎨 Diseño
+
 - Mantiene el diseño original de la aplicación React
 - Fuentes: Gill Sans + Inter
 - Colores: Esquema de colores original (#FFFFFC, #1D1D1B)
@@ -60,6 +67,7 @@ $to = "hello@imsolutions.studio"; // Cambia por tu email
 - Animaciones CSS sutiles
 
 ### 📱 Responsive
+
 - Navegación desktop completa
 - Menú hamburguesa para móviles
 - Layouts adaptativos
@@ -68,12 +76,14 @@ $to = "hello@imsolutions.studio"; // Cambia por tu email
 ## Personalización
 
 ### Cambiar contenido
+
 1. **Textos**: Edita directamente en cada archivo HTML/PHP
 2. **Imágenes**: Reemplaza las URLs en los archivos
 3. **Colores**: Modifica `assets/styles.css`
 4. **Email de contacto**: Actualiza `contact.php`
 
 ### Añadir páginas
+
 1. Crea un nuevo archivo `.php` o `.html`
 2. Copia la estructura de header y footer de las páginas existentes
 3. Agrega los enlaces de navegación correspondientes
@@ -81,6 +91,7 @@ $to = "hello@imsolutions.studio"; // Cambia por tu email
 ## SEO y metadatos
 
 Cada página incluye:
+
 - Meta description específica
 - Open Graph tags
 - Twitter Cards
@@ -90,6 +101,7 @@ Cada página incluye:
 ## Soporte para idiomas
 
 La versión actual está en español. Para añadir idiomas:
+
 1. Crea archivos separados (ej: `index-en.html`)
 2. Traduce el contenido
 3. Actualiza los enlaces de idioma en la navegación
@@ -97,12 +109,14 @@ La versión actual está en español. Para añadir idiomas:
 ## Compatibilidad
 
 ✅ **Compatible con:**
+
 - Hostings compartidos básicos
 - cPanel
 - Hostings con solo HTML/PHP
 - Cualquier servidor web con PHP
 
 ❌ **No requiere:**
+
 - Node.js
 - Frameworks específicos
 - Base de datos
@@ -111,12 +125,15 @@ La versión actual está en español. Para añadir idiomas:
 ## Mantenimiento
 
 ### Actualizaciones de contenido
+
 - Los textos se editan directamente en cada archivo
 - Las imágenes se pueden cambiar modificando las URLs
 - Los estilos se centralizan en `assets/styles.css`
 
 ### Backup recomendado
+
 Hacer backup de:
+
 - Todos los archivos `.html` y `.php`
 - Carpeta `assets/`
 - Cualquier personalización realizada
@@ -131,5 +148,6 @@ Hacer backup de:
 ## Contacto técnico
 
 Para soporte técnico de esta implementación:
+
 - Email: hello@imsolutions.studio
 - Implementación: Convertida desde React SPA original
