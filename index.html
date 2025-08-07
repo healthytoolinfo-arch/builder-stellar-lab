@@ -743,35 +743,82 @@
                             </defs>
                         </svg>
                     </div>
-                    <p>Because everything starts with believing you are ready to build</p>
+                    <p class="footer-tagline">Digital Solutions with Attitude, Resilience & Vision</p>
+                    <p class="footer-description">Building meaningful solutions for real-world problems.</p>
                 </div>
 
-                <!-- Navigation Links -->
+                <!-- Quick Links -->
                 <div class="footer-section">
-                    <h4>Navigation</h4>
+                    <h4>Quick Links</h4>
                     <nav>
-                        <a href="#projects" onclick="scrollToSection('projects')">Projects</a>
-                        <a href="#about" onclick="scrollToSection('about')">About us</a>
+                        <a href="#projects" onclick="scrollToSection('projects')">Our Projects</a>
+                        <a href="#about" onclick="scrollToSection('about')">About Us</a>
                         <a href="#contact" onclick="scrollToSection('contact')">Contact</a>
+                        <a href="contact.php">Get In Touch</a>
                     </nav>
                 </div>
 
                 <!-- Contact Info -->
                 <div class="footer-section">
-                    <h4>Contact Info</h4>
-                    <div>
-                        <a href="mailto:hello@imsolutions.studio">hello@imsolutions.studio</a>
-                        <p>Based in Bulgaria and Spain</p>
+                    <h4>Get in Touch</h4>
+                    <div class="contact-info">
+                        <a href="mailto:hello@imsolutions.studio" class="email-link">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2"/>
+                                <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            hello@imsolutions.studio
+                        </a>
+                        <p class="location">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 10C21 17 12 23 12 23S3 17 3 10C3 6.68629 5.68629 4 9 4H15C18.3137 4 21 6.68629 21 10Z" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            Based in Bulgaria & Spain
+                        </p>
                     </div>
+                </div>
+
+                <!-- Social Media -->
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 8C18.2091 8 20.2091 8.79107 21.6569 10.2388C23.1046 11.6866 23.8957 13.6866 23.8957 16V21H19.8957V16C19.8957 15.2044 19.5796 14.4413 19.0169 13.8787C18.4543 13.316 17.6913 13 16.8957 13C16.1 13 15.337 13.316 14.7744 13.8787C14.2117 14.4413 13.8957 15.2044 13.8957 16V21H9.89569V16C9.89569 13.6866 10.6868 11.6866 12.1345 10.2388C13.5822 8.79107 15.5822 8 17.7913 8H16Z" stroke="currentColor" stroke-width="2"/>
+                                <rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22 4S20.9 4.5 20 5C19.1 4 17.6 3.4 16 3.4C12.8 3.4 10.1 6.1 10.1 9.3C10.1 9.7 10.1 10.1 10.2 10.5C5.6 10.2 1.5 7.9 -0.5 4.5C-1 5.4 -1.3 6.4 -1.3 7.5C-1.3 9.5 -0.3 11.3 1.3 12.3C0.5 12.3 -0.3 12 -1 11.6V11.7C-1 14.4 1.1 16.6 3.7 17.1C3.2 17.2 2.7 17.3 2.1 17.3C1.7 17.3 1.3 17.3 0.9 17.2C1.7 19.4 4 21 6.7 21C4.5 22.7 1.8 23.7 -1.1 23.7C-1.6 23.7 -2.1 23.7 -2.6 23.6C0.2 25.4 3.5 26.4 7.1 26.4C16 26.4 21 17.3 21 9.3C21 9.1 21 8.9 21 8.7C22 8 22.8 7.1 23.4 6.1L22 4Z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="2"/>
+                                <path d="M16 11.37C16.1234 12.2022 15.9813 13.0522 15.5938 13.799C15.2063 14.5458 14.5931 15.1514 13.8416 15.5297C13.0901 15.9079 12.2384 16.0396 11.4078 15.9059C10.5771 15.7723 9.80976 15.3801 9.21484 14.7852C8.61992 14.1902 8.22773 13.4229 8.09407 12.5922C7.9604 11.7615 8.09207 10.9099 8.47033 10.1584C8.84859 9.40685 9.45418 8.79374 10.201 8.40624C10.9478 8.01874 11.7978 7.87658 12.63 8C13.4789 8.12588 14.2649 8.52146 14.8717 9.1283C15.4785 9.73515 15.8741 10.5211 16 11.37Z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M17.5 6.5H17.51" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <p class="newsletter">Subscribe to our newsletter for updates</p>
                 </div>
             </div>
 
             <!-- Bottom Section -->
             <div class="footer-bottom">
-                <p>© 2024 i'm solutions. All rights reserved.</p>
+                <div class="footer-bottom-left">
+                    <p>© 2024 i'm solutions. All rights reserved.</p>
+                    <p class="footer-subtitle">Made with ❤️ by Ivelina & Mario</p>
+                </div>
                 <div class="footer-links">
                     <a href="privacy-policy.php">Privacy Policy</a>
+                    <span class="separator">•</span>
                     <a href="terms-of-service.php">Terms of Service</a>
+                    <span class="separator">•</span>
+                    <a href="contact.php">Support</a>
                 </div>
             </div>
         </div>
