@@ -816,7 +816,16 @@
 
         // Scroll to top
         function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+
+            // Close mobile menu if open
+            const menu = document.getElementById('mobileMenu');
+            const btn = document.querySelector('.mobile-menu-btn');
+            menu.classList.remove('active');
+            btn.classList.remove('active');
         }
 
         // Active section highlighting
