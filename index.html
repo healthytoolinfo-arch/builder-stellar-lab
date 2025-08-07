@@ -651,14 +651,30 @@
             }
 
             .footer-content {
-                flex-direction: row;
-                justify-content: space-between;
+                grid-template-columns: 2fr 1fr 1fr 1fr;
+                gap: 64px;
+                align-items: start;
+            }
+
+            .footer-section:first-child {
+                max-width: 350px;
             }
 
             .footer-bottom {
                 flex-direction: row;
                 justify-content: space-between;
                 text-align: left;
+                align-items: center;
+            }
+
+            .footer-bottom-left {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+            }
+
+            .social-links {
+                margin-bottom: 12px;
             }
         }
 
