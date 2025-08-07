@@ -1,40 +1,1296 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- Primary SEO Meta Tags -->
-    <title>i'm solutions | Digital Solutions with Attitude, Resilience & Vision</title>
-    <meta name="title" content="i'm solutions | Digital Solutions with Attitude, Resilience & Vision" />
-    <meta name="description" content="We build meaningful digital solutions focused on real-world problems. Currently developing an innovative platform for nutrition professionals. Founded by Ivelina & Mario." />
-    <meta name="keywords" content="digital solutions, app development, nutrition software, startup, Ivelina, Mario, i'm solutions, technology, innovation" />
-    <meta name="author" content="i'm solutions" />
-    <meta name="robots" content="index, follow" />
+    <title>
+      i'm solutions | Digital Solutions with Attitude, Resilience & Vision
+    </title>
+    <meta
+      name="description"
+      content="We build meaningful digital solutions focused on real-world problems. Currently developing an innovative platform for nutrition professionals. Founded by Ivelina & Mario in Spain."
+    />
+    <meta
+      name="keywords"
+      content="digital solutions, app development, nutrition software, startup, Ivelina, Mario, i'm solutions, technology, innovation, Spain, nutrition app, digital platform"
+    />
+    <link rel="canonical" href="https://imsolutions.com/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://imsolutions.com/" />
-    <meta property="og:title" content="i'm solutions | Digital Solutions with Attitude, Resilience & Vision" />
-    <meta property="og:description" content="We build meaningful digital solutions focused on real-world problems. Currently developing an innovative platform for nutrition professionals." />
-    <meta property="og:image" content="https://api.builder.io/api/v1/image/assets/TEMP/aeb6591aa0992e0f1a119dda4e425d95261e1f24" />
+    <meta
+      property="og:title"
+      content="i'm solutions | Digital Solutions with Attitude, Resilience & Vision"
+    />
+    <meta
+      property="og:description"
+      content="Construimos soluciones digitales significativas enfocadas en problemas del mundo real."
+    />
+    <meta
+      property="og:image"
+      content="https://api.builder.io/api/v1/image/assets/TEMP/aeb6591aa0992e0f1a119dda4e425d95261e1f24?width=1106"
+    />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://imsolutions.com/" />
-    <meta property="twitter:title" content="i'm solutions | Digital Solutions with Attitude, Resilience & Vision" />
-    <meta property="twitter:description" content="We build meaningful digital solutions focused on real-world problems. Currently developing an innovative platform for nutrition professionals." />
-    <meta property="twitter:image" content="https://api.builder.io/api/v1/image/assets/TEMP/aeb6591aa0992e0f1a119dda4e425d95261e1f24" />
+    <meta
+      property="twitter:title"
+      content="i'm solutions | Digital Solutions with Attitude, Resilience & Vision"
+    />
+    <meta
+      property="twitter:description"
+      content="Construimos soluciones digitales significativas enfocadas en problemas del mundo real."
+    />
+    <meta
+      property="twitter:image"
+      content="https://api.builder.io/api/v1/image/assets/TEMP/aeb6591aa0992e0f1a119dda4e425d95261e1f24?width=1106"
+    />
 
-    <!-- Additional SEO -->
-    <link rel="canonical" href="https://imsolutions.com/" />
-    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-    <meta name="theme-color" content="#1D1D1B" />
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gill+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family:
+          "Gill Sans",
+          -apple-system,
+          Roboto,
+          Helvetica,
+          sans-serif;
+        background-color: #fffffc;
+        color: #1d1d1b;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 16px;
+      }
+
+      /* Header */
+      .header {
+        position: sticky;
+        top: 0;
+        background-color: #fffffc;
+        z-index: 1000;
+        padding: 32px 0 16px;
+        border-bottom: 1px solid transparent;
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        cursor: pointer;
+      }
+
+      .logo svg {
+        width: 128px;
+        height: auto;
+        transition: opacity 0.3s;
+      }
+
+      .logo:hover svg {
+        opacity: 0.7;
+      }
+
+      /* Desktop Navigation */
+      .desktop-nav {
+        display: none;
+        gap: 64px;
+        align-items: center;
+      }
+
+      .desktop-nav a {
+        font-family: "Gill Sans", sans-serif;
+        font-size: 20px;
+        color: #1d1d1b;
+        text-decoration: none;
+        transition: opacity 0.3s;
+        position: relative;
+      }
+
+      .desktop-nav a:hover {
+        opacity: 0.7;
+      }
+
+      .desktop-nav a.active::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background-color: #1d1d1b;
+      }
+
+      /* Mobile Menu Button */
+      .mobile-menu-btn {
+        display: flex;
+        flex-direction: column;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        width: 32px;
+        height: 32px;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+
+      .mobile-menu-btn span {
+        display: block;
+        width: 18px;
+        height: 2px;
+        background-color: #1d1d1b;
+        transition: all 0.3s ease;
+        position: absolute;
+      }
+
+      .mobile-menu-btn span:nth-child(1) {
+        top: 8px;
+      }
+
+      .mobile-menu-btn span:nth-child(2) {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .mobile-menu-btn span:nth-child(3) {
+        bottom: 8px;
+      }
+
+      /* Hamburger to X animation */
+      .mobile-menu-btn.active span:nth-child(1) {
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+      }
+
+      .mobile-menu-btn.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .mobile-menu-btn.active span:nth-child(3) {
+        bottom: 50%;
+        transform: translateY(50%) rotate(-45deg);
+      }
+
+      /* Mobile Menu */
+      .mobile-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fffffc;
+        border-top: 1px solid #eee;
+        padding: 32px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .mobile-menu.active {
+        display: block;
+      }
+
+      .mobile-menu nav {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        padding: 0 24px;
+      }
+
+      .mobile-menu nav a {
+        font-family: "Gill Sans", sans-serif;
+        font-size: 20px;
+        color: #1d1d1b;
+        text-decoration: none;
+        transition: opacity 0.3s;
+      }
+
+      .mobile-menu nav a:hover {
+        opacity: 0.7;
+      }
+
+      /* Hero Section */
+      .hero {
+        padding: 32px 0 64px;
+      }
+
+      .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+      }
+
+      .hero-text {
+        flex: 1;
+      }
+
+      .hero h1 {
+        font-family: "Gill Sans", sans-serif;
+        font-weight: bold;
+        font-size: 40px;
+        line-height: 1.2;
+        letter-spacing: -1.2px;
+        margin-bottom: 24px;
+      }
+
+      .hero-button {
+        width: 100%;
+        max-width: 320px;
+        padding: 16px 32px;
+        background-color: #1d1d1b;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-family: "Inter", sans-serif;
+        font-weight: bold;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .hero-button:hover {
+        background-color: #333;
+        transform: scale(1.05);
+      }
+
+      .hero-image {
+        flex: 1;
+        text-align: center;
+      }
+
+      .hero-image img {
+        width: 100%;
+        height: auto;
+        max-width: 400px;
+        border-radius: 16px;
+      }
+
+      /* Sections */
+      .section {
+        padding: 64px 0;
+        overflow: hidden;
+      }
+
+      .section h2 {
+        font-family: "Gill Sans", sans-serif;
+        font-weight: bold;
+        font-size: 36px;
+        line-height: 1.2;
+        letter-spacing: -0.96px;
+        text-align: center;
+        margin-bottom: 64px;
+      }
+
+      .section-content {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .section-text {
+        flex: 1;
+        max-width: 600px;
+      }
+
+      .section-text h3 {
+        font-family: "Gill Sans", sans-serif;
+        font-weight: bold;
+        font-size: 24px;
+        margin-bottom: 16px;
+      }
+
+      .section-image {
+        flex: 1;
+        text-align: center;
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
+      .section-image img {
+        width: 100%;
+        height: auto;
+        max-width: 400px;
+        border-radius: 16px;
+      }
+
+      .section p {
+        margin-bottom: 16px;
+        line-height: 1.4;
+        letter-spacing: -0.48px;
+      }
+
+      /* Prevent all images from overflowing */
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* Projects second image styling */
+      .projects-second-image {
+        text-align: center;
+        margin-top: 64px;
+        width: 100%;
+      }
+
+      .projects-second-image img {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+      }
+
+      /* Contact section specific styling */
+      .contact-section {
+        gap: 48px !important;
+      }
+
+      .contact-image {
+        order: -1;
+      }
+
+      /* Mobile/tablet: stack vertically, center images */
+      @media (max-width: 1023px) {
+        .section-image,
+        .contact-image {
+          display: flex;
+          justify-content: center;
+          margin: 0 auto;
+        }
+
+        .projects-second-image {
+          display: flex;
+          justify-content: center;
+        }
+      }
+
+      /* Contact Form */
+      .contact-form {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .form-group {
+        margin-bottom: 32px;
+      }
+
+      .form-group label {
+        display: block;
+        font-family: "Inter", sans-serif;
+        font-weight: bold;
+        margin-bottom: 12px;
+        font-size: 16px;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 20px 24px;
+        border: 1px solid #1d1d1b;
+        border-radius: 8px;
+        background: white;
+        font-family: "Inter", sans-serif;
+        font-size: 16px;
+        color: #666;
+        transition: all 0.3s;
+        box-sizing: border-box;
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px #1d1d1b;
+      }
+
+      .form-group textarea {
+        resize: none;
+        height: 150px;
+      }
+
+      .submit-btn {
+        width: 100%;
+        padding: 20px 32px;
+        background-color: #1d1d1b;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-family: "Inter", sans-serif;
+        font-weight: bold;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .submit-btn:hover {
+        background-color: #333;
+        transform: scale(1.05);
+      }
+
+      /* Footer */
+      footer {
+        background: linear-gradient(135deg, #1d1d1b 0%, #2a2a2a 100%);
+        color: white;
+        padding: 64px 0 32px;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .footer-section h4 {
+        font-family: "Gill Sans", sans-serif;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: white;
+      }
+
+      .footer-tagline {
+        font-weight: bold;
+        font-size: 16px;
+        margin-bottom: 8px;
+        color: #f0f0f0;
+      }
+
+      .footer-description {
+        font-size: 14px;
+        color: #bbb;
+        line-height: 1.5;
+      }
+
+      .footer-section nav {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .footer-section a {
+        color: #ccc;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .footer-section a:hover {
+        color: white;
+        transform: translateX(4px);
+      }
+
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .email-link {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 500;
+      }
+
+      .location {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #bbb;
+        font-size: 14px;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+
+      .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        transition: all 0.3s ease;
+      }
+
+      .social-link:hover {
+        background-color: white;
+        color: #1d1d1b;
+        transform: translateY(-2px);
+      }
+
+      .newsletter {
+        font-size: 13px;
+        color: #bbb;
+        line-height: 1.4;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid #444;
+        margin-top: 48px;
+        padding-top: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+      }
+
+      .footer-bottom-left p {
+        margin: 0;
+        font-size: 14px;
+      }
+
+      .footer-subtitle {
+        color: #bbb;
+        font-size: 12px;
+        margin-top: 4px;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .footer-links a {
+        font-size: 13px;
+      }
+
+      .separator {
+        color: #666;
+        font-size: 12px;
+      }
+
+      /* Desktop styles */
+      @media (min-width: 1024px) {
+        .container {
+          padding: 0 64px;
+        }
+
+        .desktop-nav {
+          display: flex;
+        }
+
+        .mobile-menu-btn {
+          display: none;
+        }
+
+        .hero {
+          padding: 64px 0 128px;
+        }
+
+        .hero-content {
+          flex-direction: row;
+          gap: 128px;
+        }
+
+        .hero h1 {
+          font-size: 80px;
+          letter-spacing: -2.4px;
+        }
+
+        .hero-text {
+          text-align: left;
+        }
+
+        .hero-button {
+          width: auto;
+        }
+
+        .section {
+          padding: 128px 0;
+        }
+
+        .section h2 {
+          font-size: 56px;
+          letter-spacing: -1.68px;
+        }
+
+        .section-content {
+          flex-direction: row;
+          gap: 64px;
+          align-items: flex-start;
+        }
+
+        .section-text {
+          max-width: 500px;
+          text-align: left;
+        }
+
+        .section-image {
+          max-width: 450px;
+        }
+
+        /* Desktop: centrar imágenes en About */
+        #about .section-content {
+          justify-content: center;
+          align-items: center;
+        }
+
+        /* Desktop: mejorar Projects segunda imagen */
+        .projects-second-image {
+          display: flex;
+          justify-content: center;
+        }
+
+        .projects-second-image img {
+          max-width: 600px;
+        }
+
+        /* Desktop: Contact layout */
+        #contact .section-content {
+          justify-content: center;
+          align-items: flex-start;
+        }
+
+        .submit-btn {
+          width: auto;
+          min-width: 200px;
+        }
+
+        .footer-content {
+          grid-template-columns: 2fr 1fr 1fr 1fr;
+          gap: 64px;
+          align-items: start;
+        }
+
+        .footer-section:first-child {
+          max-width: 350px;
+        }
+
+        .footer-bottom {
+          flex-direction: row;
+          justify-content: space-between;
+          text-align: left;
+          align-items: center;
+        }
+
+        .footer-bottom-left {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+        }
+
+        .social-links {
+          margin-bottom: 12px;
+        }
+      }
+
+      /* Success message styles */
+      .success-message {
+        background-color: #f0f9ff;
+        border: 1px solid #3b82f6;
+        color: #1e40af;
+        padding: 16px;
+        border-radius: 8px;
+        margin-top: 16px;
+        display: none;
+      }
+
+      .success-message.show {
+        display: block;
+      }
+    </style>
   </head>
-
   <body>
-    <div id="root"></div>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <!-- Logo -->
+          <div class="logo" onclick="scrollToTop()">
+            <svg
+              width="168"
+              height="135"
+              viewBox="0 0 168 135"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clipPath="url(#clip0_1_5)">
+                <path
+                  d="M9.28546 3.26505C11.8223 3.26505 14.0036 4.17797 15.8294 5.99308C17.6553 7.81356 18.5655 9.98846 18.5655 12.5178C18.5655 15.0471 17.6661 17.1254 15.8618 19.0103C14.0575 20.9006 11.8653 21.8404 9.28007 21.8404C6.69479 21.8404 4.6158 20.8952 2.7684 19.0103C0.921005 17.1308 0 14.9612 0 12.5232C0 9.95087 0.937163 7.75985 2.8061 5.96086C4.67504 4.16186 6.83483 3.26505 9.28546 3.26505ZM17.4991 32.0383V94.246H1.06643V32.0383H17.4991Z"
+                  fill="#1D1D1B"
+                />
+                <path
+                  d="M42.684 0C46.2442 0 49.0987 1.32105 51.2316 3.96316C53.3698 6.60527 54.4363 10.1012 54.4363 14.4511C54.4363 20.3099 52.465 25.5189 48.5224 30.0674C44.5799 34.6213 39.7594 37.3171 34.061 38.1602V34.632C38.3375 31.034 40.4758 26.3513 40.4758 20.5784L40.3411 18.5162C35.3106 17.5818 32.7899 14.5423 32.7899 9.39238C32.7899 6.77175 33.7379 4.55388 35.6284 2.7334C37.5189 0.912924 39.8725 0.00537014 42.6733 0.00537014L42.684 0Z"
+                  fill="#1D1D1B"
+                />
+                <path
+                  d="M104.273 30.8354C109.083 30.8354 113.144 31.9577 116.461 34.1971C119.779 36.4418 122.262 39.4491 123.91 43.2189C127.427 38.9121 130.934 35.7705 134.429 33.7943C137.925 31.8181 141.765 30.83 145.95 30.83C152.542 30.83 157.864 32.9727 161.914 37.258C165.964 41.5434 167.995 47.2626 167.995 54.4103V94.2406H151.562V57.1437C151.562 52.8368 150.636 49.4429 148.788 46.9512C146.941 44.4648 144.259 43.2189 140.736 43.2189C135.706 43.2189 130.874 46.441 126.242 52.8744V94.2353H109.874V56.8698C109.874 52.6059 108.894 49.2657 106.934 46.8438C104.973 44.4218 102.345 43.2135 99.0539 43.2135C96.3824 43.2135 93.9318 43.9815 91.7074 45.512C89.4776 47.0424 87.097 49.4966 84.5601 52.869V94.2299H68.1275V32.0383H84.5601V40.7648C87.544 37.3923 90.5709 34.8952 93.6463 33.2734C96.7217 31.6516 100.26 30.8407 104.268 30.8407L104.273 30.8354Z"
+                  fill="#1D1D1B"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_1_5">
+                  <rect width="168" height="135" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          </div>
 
-    <script type="module" src="/client/App.tsx"></script>
+          <!-- Desktop Navigation -->
+          <nav class="desktop-nav">
+            <a href="#projects" onclick="scrollToSection('projects')"
+              >Projects</a
+            >
+            <a href="#about" onclick="scrollToSection('about')">About us</a>
+            <a href="#contact" onclick="scrollToSection('contact')">Contact</a>
+          </nav>
+
+          <!-- Mobile Menu Button -->
+          <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="mobile-menu">
+          <nav>
+            <a href="#projects" onclick="scrollToSection('projects')"
+              >Projects</a
+            >
+            <a href="#about" onclick="scrollToSection('about')">About us</a>
+            <a href="#contact" onclick="scrollToSection('contact')">Contact</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1>Because everything starts with believing you are</h1>
+            <button class="hero-button" onclick="scrollToContact()">
+              Contact us
+            </button>
+          </div>
+          <div class="hero-image">
+            <img
+              src="https://api.builder.io/api/v1/image/assets/TEMP/93d315aebea6a8e9e9bdc432166000cacd20da5a?width=730"
+              alt="Team i'm solutions - Ivelina and Mario working on digital solutions and innovative app development"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="section-content">
+          <div class="section-image">
+            <img
+              src="https://api.builder.io/api/v1/image/assets/TEMP/8c88cb14f21cc79d7ba01a2959492cda992dff51?width=740"
+              alt="Digital platform for nutritionists - innovative app development for nutrition professionals"
+            />
+          </div>
+          <div class="section-text">
+            <h3 style="font-size: 24px; margin-bottom: 16px">
+              Digital platform for nutritionists (under development)
+            </h3>
+            <p>
+              We are developing a tool designed to facilitate the daily life of
+              nutrition professionals. An app focused on the organization,
+              personalization and experience of both the nutritionist and the
+              end customer.
+            </p>
+            <p>Project in progress. More details coming soon.</p>
+          </div>
+        </div>
+        <div class="projects-second-image">
+          <img
+            src="https://api.builder.io/api/v1/image/assets/TEMP/43a4cc21b9779f7054a0d9407909f77c321c11ad?width=740"
+            alt="Nutrition app interface design - user-friendly tool for nutritionist workflow and client management"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+      <div class="container">
+        <h2>About us</h2>
+        <div class="section-content">
+          <div class="section-image">
+            <img
+              src="https://api.builder.io/api/v1/image/assets/TEMP/0712b7d8c53bc7ed3e70b69b2206d49f18f07b8f?width=740"
+              alt="About i'm solutions founders - Ivelina and Mario's entrepreneurial journey in digital innovation"
+            />
+          </div>
+          <div class="section-text">
+            <p>
+              <strong
+                >We are Ivelina and Mario, and this is i'm solutions.</strong
+              >
+            </p>
+            <p>
+              We met in a startup incubator, working on opposite projects but
+              sharing the same energy: the desire to build something with
+              impact. From the first moment we knew that someday we would work
+              together. That "someday" came sooner than expected.
+            </p>
+            <p>
+              Ivelina had an idea in her head, born from her experience with
+              nutritionists: why wasn't there a really useful, human and
+              effective tool for the daily work of these professionals? She told
+              Mario about it. He didn't hesitate. That's where it all began.
+            </p>
+            <p>But it was not easy. In fact, it was quite the opposite.</p>
+            <p>
+              In the first months we faced block after block: ideas that didn't
+              fit, functionalities we didn't know how to solve, uncomfortable
+              silences after sending surveys... Until we made a decision that
+              has marked everything we are as a team: focus on what we can do
+              today, and leave for tomorrow what doesn't depend on us yet.
+            </p>
+            <p>
+              Since then, we moved forward step by step, but without stopping.
+            </p>
+            <p>
+              This is how our first app was born, designed for nutrition
+              professionals: functional, flexible, forward-looking, and built
+              from empathy with those who are going to use it. And so i'm
+              solutions was also born, not as an agency or a studio, but as a
+              company from which to launch products that are born from real
+              life, from teamwork and from a very specific way of seeing the
+              world: with attitude, resilience and vision.
+            </p>
+            <p><strong>Why "i'm"?</strong></p>
+            <p>
+              Because together we form the core of this project: Ivelina + Mario
+              = i'm. And also because we believe in teams with identity, not
+              only in products with a logo.
+            </p>
+            <p>
+              <strong
+                >This is not just about apps. It's about how to build something
+                worthwhile.</strong
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+      <div class="container">
+        <h2>Contact us</h2>
+        <div class="section-content contact-section">
+          <div class="contact-form">
+            <form id="contactForm" method="post" action="contact.php">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Rachel Joe"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Rachel@domain.com"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Type your query here....."
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="submit-btn">Contact us</button>
+              <div id="successMessage" class="success-message">
+                <strong>Message sent successfully! 🎉</strong><br />
+                Thank you for contacting us! We'll get back to you soon.
+              </div>
+            </form>
+          </div>
+          <div class="section-image contact-image">
+            <img
+              src="https://api.builder.io/api/v1/image/assets/TEMP/0960cf16332a3b978a085d2e678206bea5fddacf?width=744"
+              alt="Contact i'm solutions - Get in touch for digital solutions and app development projects"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <!-- Logo and Company Info -->
+          <div class="footer-section">
+            <div class="logo" onclick="scrollToTop()">
+              <svg
+                width="120"
+                height="96"
+                viewBox="0 0 168 135"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clipPath="url(#clip0_footer)">
+                  <path
+                    d="M9.28546 3.26505C11.8223 3.26505 14.0036 4.17797 15.8294 5.99308C17.6553 7.81356 18.5655 9.98846 18.5655 12.5178C18.5655 15.0471 17.6661 17.1254 15.8618 19.0103C14.0575 20.9006 11.8653 21.8404 9.28007 21.8404C6.69479 21.8404 4.6158 20.8952 2.7684 19.0103C0.921005 17.1308 0 14.9612 0 12.5232C0 9.95087 0.937163 7.75985 2.8061 5.96086C4.67504 4.16186 6.83483 3.26505 9.28546 3.26505ZM17.4991 32.0383V94.246H1.06643V32.0383H17.4991Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M42.684 0C46.2442 0 49.0987 1.32105 51.2316 3.96316C53.3698 6.60527 54.4363 10.1012 54.4363 14.4511C54.4363 20.3099 52.465 25.5189 48.5224 30.0674C44.5799 34.6213 39.7594 37.3171 34.061 38.1602V34.632C38.3375 31.034 40.4758 26.3513 40.4758 20.5784L40.3411 18.5162C35.3106 17.5818 32.7899 14.5423 32.7899 9.39238C32.7899 6.77175 33.7379 4.55388 35.6284 2.7334C37.5189 0.912924 39.8725 0.00537014 42.6733 0.00537014L42.684 0Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M104.273 30.8354C109.083 30.8354 113.144 31.9577 116.461 34.1971C119.779 36.4418 122.262 39.4491 123.91 43.2189C127.427 38.9121 130.934 35.7705 134.429 33.7943C137.925 31.8181 141.765 30.83 145.95 30.83C152.542 30.83 157.864 32.9727 161.914 37.258C165.964 41.5434 167.995 47.2626 167.995 54.4103V94.2406H151.562V57.1437C151.562 52.8368 150.636 49.4429 148.788 46.9512C146.941 44.4648 144.259 43.2189 140.736 43.2189C135.706 43.2189 130.874 46.441 126.242 52.8744V94.2353H109.874V56.8698C109.874 52.6059 108.894 49.2657 106.934 46.8438C104.973 44.4218 102.345 43.2135 99.0539 43.2135C96.3824 43.2135 93.9318 43.9815 91.7074 45.512C89.4776 47.0424 87.097 49.4966 84.5601 52.869V94.2299H68.1275V32.0383H84.5601V40.7648C87.544 37.3923 90.5709 34.8952 93.6463 33.2734C96.7217 31.6516 100.26 30.8407 104.268 30.8407L104.273 30.8354Z"
+                    fill="white"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_footer">
+                    <rect width="168" height="135" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+            <p class="footer-tagline">
+              Digital Solutions with Attitude, Resilience & Vision
+            </p>
+            <p class="footer-description">
+              Building meaningful solutions for real-world problems.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <nav>
+              <a href="#projects" onclick="scrollToSection('projects')"
+                >Our Projects</a
+              >
+              <a href="#about" onclick="scrollToSection('about')">About Us</a>
+              <a href="#contact" onclick="scrollToSection('contact')"
+                >Contact</a
+              >
+              <a href="contact.php">Get In Touch</a>
+            </nav>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="footer-section">
+            <h4>Get in Touch</h4>
+            <div class="contact-info">
+              <a href="mailto:hello@imsolutions.studio" class="email-link">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <polyline
+                    points="22,6 12,13 2,6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+                hello@imsolutions.studio
+              </a>
+              <p class="location">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21 10C21 17 12 23 12 23S3 17 3 10C3 6.68629 5.68629 4 9 4H15C18.3137 4 21 6.68629 21 10Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <circle
+                    cx="12"
+                    cy="10"
+                    r="3"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+                Based in Bulgaria & Spain
+              </p>
+            </div>
+          </div>
+
+          <!-- Social Media -->
+          <div class="footer-section">
+            <h4>Connect With Us</h4>
+            <div class="social-links">
+              <a href="#" class="social-link" aria-label="LinkedIn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16 8C18.2091 8 20.2091 8.79107 21.6569 10.2388C23.1046 11.6866 23.8957 13.6866 23.8957 16V21H19.8957V16C19.8957 15.2044 19.5796 14.4413 19.0169 13.8787C18.4543 13.316 17.6913 13 16.8957 13C16.1 13 15.337 13.316 14.7744 13.8787C14.2117 14.4413 13.8957 15.2044 13.8957 16V21H9.89569V16C9.89569 13.6866 10.6868 11.6866 12.1345 10.2388C13.5822 8.79107 15.5822 8 17.7913 8H16Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <rect
+                    x="2"
+                    y="9"
+                    width="4"
+                    height="12"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <circle
+                    cx="4"
+                    cy="4"
+                    r="2"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+              </a>
+              <a href="#" class="social-link" aria-label="Twitter">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M22 4S20.9 4.5 20 5C19.1 4 17.6 3.4 16 3.4C12.8 3.4 10.1 6.1 10.1 9.3C10.1 9.7 10.1 10.1 10.2 10.5C5.6 10.2 1.5 7.9 -0.5 4.5C-1 5.4 -1.3 6.4 -1.3 7.5C-1.3 9.5 -0.3 11.3 1.3 12.3C0.5 12.3 -0.3 12 -1 11.6V11.7C-1 14.4 1.1 16.6 3.7 17.1C3.2 17.2 2.7 17.3 2.1 17.3C1.7 17.3 1.3 17.3 0.9 17.2C1.7 19.4 4 21 6.7 21C4.5 22.7 1.8 23.7 -1.1 23.7C-1.6 23.7 -2.1 23.7 -2.6 23.6C0.2 25.4 3.5 26.4 7.1 26.4C16 26.4 21 17.3 21 9.3C21 9.1 21 8.9 21 8.7C22 8 22.8 7.1 23.4 6.1L22 4Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+              </a>
+              <a href="#" class="social-link" aria-label="Instagram">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    x="2"
+                    y="2"
+                    width="20"
+                    height="20"
+                    rx="5"
+                    ry="5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M16 11.37C16.1234 12.2022 15.9813 13.0522 15.5938 13.799C15.2063 14.5458 14.5931 15.1514 13.8416 15.5297C13.0901 15.9079 12.2384 16.0396 11.4078 15.9059C10.5771 15.7723 9.80976 15.3801 9.21484 14.7852C8.61992 14.1902 8.22773 13.4229 8.09407 12.5922C7.9604 11.7615 8.09207 10.9099 8.47033 10.1584C8.84859 9.40685 9.45418 8.79374 10.201 8.40624C10.9478 8.01874 11.7978 7.87658 12.63 8C13.4789 8.12588 14.2649 8.52146 14.8717 9.1283C15.4785 9.73515 15.8741 10.5211 16 11.37Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M17.5 6.5H17.51"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+              </a>
+            </div>
+            <p class="newsletter">Subscribe to our newsletter for updates</p>
+          </div>
+        </div>
+
+        <!-- Bottom Section -->
+        <div class="footer-bottom">
+          <div class="footer-bottom-left">
+            <p>© 2024 i'm solutions. All rights reserved.</p>
+            <p class="footer-subtitle">Made with ❤️ by Ivelina & Mario</p>
+          </div>
+          <div class="footer-links">
+            <a href="privacy-policy.php">Privacy Policy</a>
+            <span class="separator">•</span>
+            <a href="terms-of-service.php">Terms of Service</a>
+            <span class="separator">•</span>
+            <a href="contact.php">Support</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      function toggleMobileMenu() {
+        const menu = document.getElementById("mobileMenu");
+        const btn = document.querySelector(".mobile-menu-btn");
+        menu.classList.toggle("active");
+        btn.classList.toggle("active");
+      }
+
+      // Smooth scroll to contact
+      function scrollToContact() {
+        scrollToSection("contact");
+      }
+
+      // Scroll to section
+      function scrollToSection(sectionId) {
+        const element = document.getElementById(sectionId);
+        const header = document.querySelector(".header");
+        const headerHeight = header ? header.offsetHeight : 80;
+
+        if (element) {
+          const elementPosition = element.offsetTop;
+          const offsetPosition = elementPosition - headerHeight - 20; // 20px extra margin
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
+        }
+
+        // Close mobile menu
+        const menu = document.getElementById("mobileMenu");
+        const btn = document.querySelector(".mobile-menu-btn");
+        menu.classList.remove("active");
+        btn.classList.remove("active");
+      }
+
+      // Scroll to top
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+
+        // Close mobile menu if open
+        const menu = document.getElementById("mobileMenu");
+        const btn = document.querySelector(".mobile-menu-btn");
+        menu.classList.remove("active");
+        btn.classList.remove("active");
+      }
+
+      // Active section highlighting
+      window.addEventListener("scroll", function () {
+        const sections = ["projects", "about", "contact"];
+        const navLinks = document.querySelectorAll("nav a");
+        const header = document.querySelector(".header");
+        const headerHeight = header ? header.offsetHeight : 80;
+
+        sections.forEach((sectionId) => {
+          const section = document.getElementById(sectionId);
+          const navLink = document.querySelector(`nav a[href="#${sectionId}"]`);
+
+          if (section && navLink) {
+            const rect = section.getBoundingClientRect();
+            const threshold = headerHeight + 50;
+
+            if (rect.top <= threshold && rect.bottom >= threshold) {
+              navLinks.forEach((link) => link.classList.remove("active"));
+              navLink.classList.add("active");
+            }
+          }
+        });
+
+        // Remove active if we're at the top
+        if (window.scrollY < 100) {
+          navLinks.forEach((link) => link.classList.remove("active"));
+        }
+      });
+
+      // Form submission handling
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Simulate form submission
+          const formData = new FormData(this);
+
+          // Here you would normally send the data to your PHP script
+          // For demo purposes, we'll just show the success message
+
+          // Show success message
+          document.getElementById("successMessage").classList.add("show");
+
+          // Reset form
+          this.reset();
+
+          // Hide success message after 5 seconds
+          setTimeout(() => {
+            document.getElementById("successMessage").classList.remove("show");
+          }, 5000);
+        });
+
+      // Language selector
+      function changeLanguage(lang) {
+        // This would redirect to different language versions
+        if (lang === "en") {
+          window.location.href = "index-en.html";
+        } else if (lang === "bg") {
+          window.location.href = "index-bg.html";
+        }
+      }
+    </script>
   </body>
 </html>
