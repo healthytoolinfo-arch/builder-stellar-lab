@@ -1,40 +1,611 @@
 <!doctype html>
-<html lang="en">
-  <head>
+<html lang="es">
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- Primary SEO Meta Tags -->
     <title>i'm solutions | Digital Solutions with Attitude, Resilience & Vision</title>
-    <meta name="title" content="i'm solutions | Digital Solutions with Attitude, Resilience & Vision" />
-    <meta name="description" content="We build meaningful digital solutions focused on real-world problems. Currently developing an innovative platform for nutrition professionals. Founded by Ivelina & Mario." />
-    <meta name="keywords" content="digital solutions, app development, nutrition software, startup, Ivelina, Mario, i'm solutions, technology, innovation" />
-    <meta name="author" content="i'm solutions" />
-    <meta name="robots" content="index, follow" />
-
+    <meta name="description" content="Construimos soluciones digitales significativas enfocadas en problemas del mundo real. Actualmente desarrollando una plataforma innovadora para profesionales de la nutrición. Fundado por Ivelina & Mario en España." />
+    <meta name="keywords" content="soluciones digitales, desarrollo de apps, software de nutrición, startup, Ivelina, Mario, i'm solutions, tecnología, innovación, España, app de nutrición, plataforma digital" />
+    <link rel="canonical" href="https://imsolutions.com/" />
+    
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://imsolutions.com/" />
     <meta property="og:title" content="i'm solutions | Digital Solutions with Attitude, Resilience & Vision" />
-    <meta property="og:description" content="We build meaningful digital solutions focused on real-world problems. Currently developing an innovative platform for nutrition professionals." />
-    <meta property="og:image" content="https://api.builder.io/api/v1/image/assets/TEMP/aeb6591aa0992e0f1a119dda4e425d95261e1f24" />
+    <meta property="og:description" content="Construimos soluciones digitales significativas enfocadas en problemas del mundo real." />
+    <meta property="og:image" content="https://api.builder.io/api/v1/image/assets/TEMP/aeb6591aa0992e0f1a119dda4e425d95261e1f24?width=1106" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://imsolutions.com/" />
     <meta property="twitter:title" content="i'm solutions | Digital Solutions with Attitude, Resilience & Vision" />
-    <meta property="twitter:description" content="We build meaningful digital solutions focused on real-world problems. Currently developing an innovative platform for nutrition professionals." />
-    <meta property="twitter:image" content="https://api.builder.io/api/v1/image/assets/TEMP/aeb6591aa0992e0f1a119dda4e425d95261e1f24" />
+    <meta property="twitter:description" content="Construimos soluciones digitales significativas enfocadas en problemas del mundo real." />
+    <meta property="twitter:image" content="https://api.builder.io/api/v1/image/assets/TEMP/aeb6591aa0992e0f1a119dda4e425d95261e1f24?width=1106" />
 
-    <!-- Additional SEO -->
-    <link rel="canonical" href="https://imsolutions.com/" />
-    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-    <meta name="theme-color" content="#1D1D1B" />
-  </head>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gill+Sans:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <body>
-    <div id="root"></div>
+        html {
+            scroll-behavior: smooth;
+        }
 
-    <script type="module" src="/client/App.tsx"></script>
-  </body>
+        body {
+            font-family: 'Gill Sans', -apple-system, Roboto, Helvetica, sans-serif;
+            background-color: #FFFFFC;
+            color: #1D1D1B;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            background-color: #FFFFFC;
+            z-index: 1000;
+            padding: 16px 0;
+            border-bottom: 1px solid transparent;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo svg {
+            width: 128px;
+            height: auto;
+            cursor: pointer;
+        }
+
+        nav {
+            display: none;
+        }
+
+        nav.desktop {
+            display: flex;
+            gap: 64px;
+        }
+
+        nav a {
+            font-family: 'Gill Sans', sans-serif;
+            font-size: 20px;
+            color: #1D1D1B;
+            text-decoration: none;
+            transition: opacity 0.3s;
+            position: relative;
+        }
+
+        nav a:hover {
+            opacity: 0.7;
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: #1D1D1B;
+        }
+
+        .language-selector {
+            margin-left: 32px;
+        }
+
+        .language-selector select {
+            background: none;
+            border: 1px solid #1D1D1B;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+        }
+
+        /* Mobile menu */
+        .mobile-menu-btn {
+            display: block;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #FFFFFC;
+            border-top: 1px solid #ccc;
+            padding: 32px 0;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu nav {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            padding: 0 24px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 32px 0 64px;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero h1 {
+            font-family: 'Gill Sans', sans-serif;
+            font-weight: bold;
+            font-size: 48px;
+            line-height: 1.2;
+            letter-spacing: -0.96px;
+            margin-bottom: 24px;
+        }
+
+        .hero-button {
+            width: 100%;
+            max-width: 320px;
+            padding: 16px 32px;
+            background-color: #1D1D1B;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .hero-button:hover {
+            background-color: #333;
+            transform: scale(1.05);
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            max-width: 400px;
+        }
+
+        /* Sections */
+        .section {
+            padding: 64px 0;
+        }
+
+        .section h2 {
+            font-family: 'Gill Sans', sans-serif;
+            font-weight: bold;
+            font-size: 48px;
+            line-height: 1.2;
+            letter-spacing: -0.96px;
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-content {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .section-text {
+            flex: 1;
+        }
+
+        .section-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .section-image img {
+            max-width: 100%;
+            height: auto;
+            max-width: 400px;
+        }
+
+        .section p {
+            margin-bottom: 16px;
+            line-height: 1.4;
+            letter-spacing: -0.48px;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 16px 24px;
+            border: 1px solid #1D1D1B;
+            border-radius: 8px;
+            background: white;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            color: #666;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #1D1D1B;
+        }
+
+        .form-group textarea {
+            resize: none;
+            height: 120px;
+        }
+
+        .submit-btn {
+            padding: 16px 32px;
+            background-color: #1D1D1B;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #333;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1D1D1B;
+            color: white;
+            padding: 64px 0;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .footer-section h4 {
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #444;
+            margin-top: 48px;
+            padding-top: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+        }
+
+        /* Desktop styles */
+        @media (min-width: 1024px) {
+            .container {
+                padding: 0 64px;
+            }
+
+            nav.desktop {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: none;
+            }
+
+            .hero {
+                padding: 64px 0 128px;
+            }
+
+            .hero-content {
+                flex-direction: row;
+                gap: 128px;
+            }
+
+            .hero h1 {
+                font-size: 112px;
+                letter-spacing: -2.16px;
+            }
+
+            .hero-button {
+                width: auto;
+            }
+
+            .section {
+                padding: 128px 0;
+            }
+
+            .section h2 {
+                font-size: 112px;
+                letter-spacing: -2.16px;
+            }
+
+            .section-content {
+                flex-direction: row;
+                gap: 128px;
+            }
+
+            .footer-content {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .footer-bottom {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
+        }
+
+        /* Success message styles */
+        .success-message {
+            background-color: #f0f9ff;
+            border: 1px solid #3b82f6;
+            color: #1e40af;
+            padding: 16px;
+            border-radius: 8px;
+            margin-top: 16px;
+            display: none;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <?php include 'includes/header.php'; ?>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Porque todo empieza con creer que eres</h1>
+                    <h1>Listo para construir</h1>
+                    <button class="hero-button" onclick="scrollToContact()">Contáctanos</button>
+                </div>
+                <div class="hero-image">
+                    <img src="https://api.builder.io/api/v1/image/assets/TEMP/aeb6591aa0992e0f1a119dda4e425d95261e1f24?width=1106" 
+                         alt="Equipo i'm solutions - Ivelina y Mario trabajando en soluciones digitales y desarrollo de apps innovadoras">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+        <div class="container">
+            <h2>Proyectos</h2>
+            <div class="section-content">
+                <div class="section-image">
+                    <img src="https://api.builder.io/api/v1/image/assets/TEMP/2785a569c041b1950ce1cc503e61182ca53bd9a5?width=718" 
+                         alt="Plataforma digital para nutricionistas - desarrollo innovador de apps para profesionales de la nutrición">
+                </div>
+                <div class="section-text">
+                    <h3 style="font-size: 24px; margin-bottom: 16px;">Plataforma digital para nutricionistas (en desarrollo)</h3>
+                    <p>Estamos desarrollando una herramienta diseñada para facilitar la vida diaria de los profesionales de la nutrición. Una app enfocada en la organización, personalización y experiencia tanto del nutricionista como del cliente final.</p>
+                    <p>Proyecto en progreso. Más detalles próximamente.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 64px;">
+                <img src="https://api.builder.io/api/v1/image/assets/TEMP/a937afc03306a051c8043cbd0977df0234d4f0ea?width=1104" 
+                     alt="Interfaz de la app de nutrición - herramienta amigable para el flujo de trabajo del nutricionista y gestión de clientes" 
+                     style="max-width: 100%; height: auto; max-width: 600px;">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2>Sobre nosotros</h2>
+            <div class="section-content">
+                <div class="section-image">
+                    <img src="https://api.builder.io/api/v1/image/assets/TEMP/e18d29b28501d84e34086be05d5ef2a5654c8e6d?width=722" 
+                         alt="Sobre los fundadores de i'm solutions - El viaje emprendedor de Ivelina y Mario en innovación digital">
+                </div>
+                <div class="section-text">
+                    <p>En i'm Solutions, diseñamos y desarrollamos productos y servicios digitales que resuelven problemas del mundo real con simplicidad, propósito y un toque humano.</p>
+                    <p>Nacido de una pasión compartida por la tecnología, la innovación y la resolución de problemas, i'm Solutions fue fundado por Ivelina y Mario, dos profesionales con fortalezas complementarias y una visión unificada: construir soluciones digitales significativas que mejoren la vida cotidiana.</p>
+                    <p>Ivelina, una experimentada Product Manager, pasó años explorando cómo convertir desafíos complejos en experiencias simples e intuitivas. Frustrada por las limitaciones de esperar el "momento perfecto", dio un paso audaz: convertirse en la primera cliente de su propia startup. Ese cambio de mentalidad encendió los cimientos de i'm Solutions: empezar pequeño, resolver claramente, construir con corazón.</p>
+                    <p>Mario aportó la columna vertebral técnica y la mentalidad operacional para dar vida a esta visión. Juntos, crearon un equipo de startup arraigado en la confianza, creatividad y valores compartidos. Su colaboración demostró que el producto real no es solo el software, es la sinergia entre personas que creen en el valor a largo plazo.</p>
+                    <p><strong>Nuestra misión es crear experiencias digitales escalables, inteligentes e impactantes que empoderen tanto a los creadores como a los usuarios finales.</strong></p>
+                    <p><strong>No solo construimos productos.<br>Construimos soluciones que fluyen.</strong></p>
+                    <p style="font-size: 18px;"><strong>i'm está listo para construir, ¿y tú?</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <h2>Contáctanos</h2>
+            <div class="section-content">
+                <div class="contact-form">
+                    <form id="contactForm" method="post" action="contact.php">
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" name="name" placeholder="María García" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="maria@dominio.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="message" placeholder="Escribe tu consulta aquí....." required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Enviar el mensaje</button>
+                        <div id="successMessage" class="success-message">
+                            <strong>¡Mensaje enviado correctamente! 🎉</strong><br>
+                            ¡Gracias por contactarnos! Te responderemos pronto.
+                        </div>
+                    </form>
+                </div>
+                <div class="section-image">
+                    <img src="https://api.builder.io/api/v1/image/assets/TEMP/0dd979f6d97ac4aa15d61a99a715b109041f1b8e?width=912" 
+                         alt="Contacta con i'm solutions - Ponte en contacto para proyectos de soluciones digitales y desarrollo de apps">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <?php include 'includes/footer.php'; ?>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
+        }
+
+        // Smooth scroll to contact
+        function scrollToContact() {
+            document.getElementById('contact').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        // Scroll to section
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+            
+            // Close mobile menu
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.remove('active');
+        }
+
+        // Scroll to top
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Active section highlighting
+        window.addEventListener('scroll', function() {
+            const sections = ['projects', 'about', 'contact'];
+            const navLinks = document.querySelectorAll('nav a');
+            
+            sections.forEach(sectionId => {
+                const section = document.getElementById(sectionId);
+                const navLink = document.querySelector(`nav a[href="#${sectionId}"]`);
+                
+                if (section && navLink) {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top <= 200 && rect.bottom >= 200) {
+                        navLinks.forEach(link => link.classList.remove('active'));
+                        navLink.classList.add('active');
+                    }
+                }
+            });
+        });
+
+        // Form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulate form submission
+            const formData = new FormData(this);
+            
+            // Here you would normally send the data to your PHP script
+            // For demo purposes, we'll just show the success message
+            
+            // Show success message
+            document.getElementById('successMessage').classList.add('show');
+            
+            // Reset form
+            this.reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                document.getElementById('successMessage').classList.remove('show');
+            }, 5000);
+        });
+
+        // Language selector
+        function changeLanguage(lang) {
+            // This would redirect to different language versions
+            if (lang === 'en') {
+                window.location.href = 'index-en.html';
+            } else if (lang === 'bg') {
+                window.location.href = 'index-bg.html';
+            }
+        }
+    </script>
+</body>
 </html>
