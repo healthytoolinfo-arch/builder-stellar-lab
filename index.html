@@ -832,19 +832,28 @@
         window.addEventListener('scroll', function() {
             const sections = ['projects', 'about', 'contact'];
             const navLinks = document.querySelectorAll('nav a');
-            
+            const header = document.querySelector('.header');
+            const headerHeight = header ? header.offsetHeight : 80;
+
             sections.forEach(sectionId => {
                 const section = document.getElementById(sectionId);
                 const navLink = document.querySelector(`nav a[href="#${sectionId}"]`);
-                
+
                 if (section && navLink) {
                     const rect = section.getBoundingClientRect();
-                    if (rect.top <= 200 && rect.bottom >= 200) {
+                    const threshold = headerHeight + 50;
+
+                    if (rect.top <= threshold && rect.bottom >= threshold) {
                         navLinks.forEach(link => link.classList.remove('active'));
                         navLink.classList.add('active');
                     }
                 }
             });
+
+            // Remove active if we're at the top
+            if (window.scrollY < 100) {
+                navLinks.forEach(link => link.classList.remove('active'));
+            }
         });
 
         // Form submission handling
