@@ -51,12 +51,12 @@
         }
 
         /* Header */
-        header {
+        .header {
             position: sticky;
             top: 0;
             background-color: #FFFFFC;
             z-index: 1000;
-            padding: 16px 0;
+            padding: 32px 0 16px;
             border-bottom: 1px solid transparent;
         }
 
@@ -66,22 +66,28 @@
             align-items: center;
         }
 
-        .logo svg {
-            width: 128px;
-            height: auto;
+        .logo {
             cursor: pointer;
         }
 
-        nav {
+        .logo svg {
+            width: 128px;
+            height: auto;
+            transition: opacity 0.3s;
+        }
+
+        .logo:hover svg {
+            opacity: 0.7;
+        }
+
+        /* Desktop Navigation */
+        .desktop-nav {
             display: none;
-        }
-
-        nav.desktop {
-            display: flex;
             gap: 64px;
+            align-items: center;
         }
 
-        nav a {
+        .desktop-nav a {
             font-family: 'Gill Sans', sans-serif;
             font-size: 20px;
             color: #1D1D1B;
@@ -90,11 +96,11 @@
             position: relative;
         }
 
-        nav a:hover {
+        .desktop-nav a:hover {
             opacity: 0.7;
         }
 
-        nav a.active::after {
+        .desktop-nav a.active::after {
             content: '';
             position: absolute;
             bottom: -8px;
@@ -104,28 +110,28 @@
             background-color: #1D1D1B;
         }
 
-        .language-selector {
-            margin-left: 32px;
-        }
-
-        .language-selector select {
-            background: none;
-            border: 1px solid #1D1D1B;
-            padding: 8px 16px;
-            border-radius: 8px;
-            font-family: 'Inter', sans-serif;
-            cursor: pointer;
-        }
-
-        /* Mobile menu */
+        /* Mobile Menu Button */
         .mobile-menu-btn {
-            display: block;
+            display: flex;
+            flex-direction: column;
             background: none;
             border: none;
             cursor: pointer;
             padding: 8px;
+            width: 32px;
+            height: 32px;
+            justify-content: space-around;
         }
 
+        .mobile-menu-btn span {
+            display: block;
+            width: 18px;
+            height: 2px;
+            background-color: #1D1D1B;
+            transition: all 0.3s;
+        }
+
+        /* Mobile Menu */
         .mobile-menu {
             display: none;
             position: absolute;
@@ -133,8 +139,9 @@
             left: 0;
             right: 0;
             background: #FFFFFC;
-            border-top: 1px solid #ccc;
+            border-top: 1px solid #eee;
             padding: 32px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .mobile-menu.active {
@@ -146,6 +153,18 @@
             flex-direction: column;
             gap: 24px;
             padding: 0 24px;
+        }
+
+        .mobile-menu nav a {
+            font-family: 'Gill Sans', sans-serif;
+            font-size: 20px;
+            color: #1D1D1B;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .mobile-menu nav a:hover {
+            opacity: 0.7;
         }
 
         /* Hero Section */
@@ -523,7 +542,7 @@
                     <p>En i'm Solutions, diseñamos y desarrollamos productos y servicios digitales que resuelven problemas del mundo real con simplicidad, propósito y un toque humano.</p>
                     <p>Nacido de una pasión compartida por la tecnología, la innovación y la resolución de problemas, i'm Solutions fue fundado por Ivelina y Mario, dos profesionales con fortalezas complementarias y una visión unificada: construir soluciones digitales significativas que mejoren la vida cotidiana.</p>
                     <p>Ivelina, una experimentada Product Manager, pasó años explorando cómo convertir desafíos complejos en experiencias simples e intuitivas. Frustrada por las limitaciones de esperar el "momento perfecto", dio un paso audaz: convertirse en la primera cliente de su propia startup. Ese cambio de mentalidad encendió los cimientos de i'm Solutions: empezar pequeño, resolver claramente, construir con corazón.</p>
-                    <p>Mario aportó la columna vertebral técnica y la mentalidad operacional para dar vida a esta visión. Juntos, crearon un equipo de startup arraigado en la confianza, creatividad y valores compartidos. Su colaboración demostró que el producto real no es solo el software, es la sinergia entre personas que creen en el valor a largo plazo.</p>
+                    <p>Mario aportó la columna vertebral técnica y la mentalidad operacional para dar vida a esta visión. Juntos, crearon un equipo de startup arraigado en la confianza, creatividad y valores compartidos. Su colaboraci��n demostró que el producto real no es solo el software, es la sinergia entre personas que creen en el valor a largo plazo.</p>
                     <p><strong>Nuestra misión es crear experiencias digitales escalables, inteligentes e impactantes que empoderen tanto a los creadores como a los usuarios finales.</strong></p>
                     <p><strong>No solo construimos productos.<br>Construimos soluciones que fluyen.</strong></p>
                     <p style="font-size: 18px;"><strong>i'm está listo para construir, ¿y tú?</strong></p>
