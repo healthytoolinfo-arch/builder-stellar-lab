@@ -335,6 +335,30 @@
             height: auto;
         }
 
+        /* Contact section specific styling */
+        .contact-section {
+            gap: 48px !important;
+        }
+
+        .contact-image {
+            order: -1;
+        }
+
+        /* Mobile/tablet: stack vertically, center images */
+        @media (max-width: 1023px) {
+            .section-image,
+            .contact-image {
+                display: flex;
+                justify-content: center;
+                margin: 0 auto;
+            }
+
+            .projects-second-image {
+                display: flex;
+                justify-content: center;
+            }
+        }
+
         /* Contact Form */
         .contact-form {
             width: 100%;
